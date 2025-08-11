@@ -1,0 +1,77 @@
+/* FacilitiesPreview.module.css */
+
+.facilitiesPreview {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.sectionTitle {
+  font-family: var(--fontHeading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #111;
+}
+
+.facilityBlock {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  flex-wrap: nowrap;
+}
+
+.facilityBlock.reverse {
+  flex-direction: row-reverse;
+}
+
+.facilityImage {
+  flex: 1 1 45%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 320px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.facilityImage:hover {
+  transform: scale(1.05);
+}
+
+.facilityContent {
+  flex: 1 1 50%;
+  color: #222;
+}
+
+.facilityTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--papconGreen);
+  margin-bottom: 0.8rem;
+}
+
+.facilityText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .facilityBlock,
+  .facilityBlock.reverse {
+    flex-direction: column;
+  }
+
+  .facilityImage {
+    max-height: 240px;
+  }
+
+  .facilityContent {
+    margin-top: 1rem;
+  }
+}

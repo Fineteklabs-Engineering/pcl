@@ -1,0 +1,87 @@
+.historyPreview {
+  position: relative;
+  width: 100vw;
+  padding: 5rem 1.5rem;
+  text-align: center;
+background-image: url("https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/Home-Products-BG.webp");
+background-position: center center;
+
+background-repeat: no-repeat;
+background-size: cover;
+
+  color: #222;
+  overflow: hidden;
+
+}
+
+.historyPreview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: rgba(255 255 255 / 0.85); */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.historyPreviewContent {
+  max-width: 720px;
+  margin: 0 18vw;
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.heading {
+  font-family: var(--fontHeading);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  display: inline-block;
+  color: #222;
+  position: relative;
+}
+
+.heading span {
+  color: var(--papconOrange);
+  position: relative;
+}
+
+.underline {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50%;
+  height: 4px;
+  background: var(--papconOrange);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.text {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.readMore {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: black;
+  border: 2px solid var(--papconGreen);
+  padding: 0.6rem 1.8rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+
+.readMore:hover {
+  background: var(--papconGreen);
+  color: white;
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.5);
+  transform: scale(1.05);
+}

@@ -1,0 +1,28 @@
+:root {
+  --papconOrange: #FF7F11;
+  --papconGreen: #A8E600;
+  --fontHeading: 'Poppins', sans-serif;
+  --fontBody: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fontBody);
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

@@ -5,19 +5,34 @@
   padding: 0 2rem;
   text-align: center;
   position: relative;
+  font-family: 'Playfair Display', serif
 }
 
+
 .heading {
-  font-size: 3.25rem;
-  font-weight: 800;
-  margin-bottom: 3rem;
+  font-family: var(--fontHeading);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2.5rem;
+  display: inline-block;
   color: #222;
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  letter-spacing: -0.5px;
 }
+.headingSpan {
+  color:#f28c28
+}
+
+.heading::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%; 
+  height: 3px;
+  background-color: #f28c28;
+  border-radius: 2px;
+}
+
 
 .headingDecor {
   color: #f28c28;
@@ -132,29 +147,24 @@
 }
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 3rem;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #f28c28;
-  background: transparent;
-  border: 2px solid #f28c28;
+ font-weight: 600;
+  font-size: 1.1rem;
+  color: black;
+  border: 2px solid var(--papconGreen);
+  padding: 0.6rem 1.8rem;
   border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  user-select: none;
 }
 
 .button:hover {
+  background: var(--papconGreen);
   color: white;
-  background: #f28c28;
-  box-shadow: 0 8px 20px rgba(242, 140, 40, 0.3);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.5);
+  transform: scale(1.05);
 }
 
 .button svg {
@@ -165,7 +175,7 @@
   transform: translateX(5px);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1024px) {
   .gridContainer {
     gap: 1.5rem;

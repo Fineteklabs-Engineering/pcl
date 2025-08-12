@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/global.css";
 
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -17,12 +17,24 @@ export default function Navbar() {
     { path: "/contact", label: "Contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolledBg : ""}`}>
       <div className={styles.navContainer}>
-        {/* Logo */}
         <Link to="/" className={styles.logo}>
-          Papcon<span>Kenya</span>
+          <img
+            src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png"
+            alt="Papcon Kenya Logo"
+            className={styles.logoImg}
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -37,7 +49,11 @@ export default function Navbar() {
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
+                  isActive
+                    ? `${styles.active} ${styles.navLink} ${
+                        scrolled ? styles.scrolled : ""
+                      }`
+                    : `${styles.navLink} ${scrolled ? styles.scrolled : ""}`
                 }
               >
                 {link.label}
@@ -57,7 +73,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

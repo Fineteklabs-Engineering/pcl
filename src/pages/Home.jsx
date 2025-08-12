@@ -6,7 +6,7 @@ import CoreBusiness from "../sections/home/CoreBusiness";
 
 import MiniGallery from "../sections/home/MiniGallery";
 import FacilitiesPreview from "../sections/home/FacilitiesPreview";
-// import ContactSnippet from "../sections/home/ContactSnippet";
+import ContactSnippet from "../sections/home/ContactSnippet";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <CoreBusiness />
       <MiniGallery />
       <FacilitiesPreview />
-      {/* <ContactSnippet /> */}
+      <ContactSnippet />
     </>
   );
 }

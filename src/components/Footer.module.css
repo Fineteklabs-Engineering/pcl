@@ -1,0 +1,95 @@
+.footer {
+  background-color: #fff;
+  color: black;
+  padding: 3rem 1rem 1rem;
+  font-family: 'Play Display',serif;
+  margin-top: 10%;
+}
+
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.footerLeft, .footerCenter, .footerRight {
+  flex: 1 1 250px;
+}
+
+.logo {
+  width: 160px;
+  margin-bottom: 1rem;
+}
+
+.footerLeft p {
+  color: #000;
+  line-height: 1.5;
+}
+
+.footerCenter h4, .footerRight h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footerCenter ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerCenter li {
+  margin-bottom: 0.5rem;
+}
+
+.footerCenter a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerCenter a:hover {
+  color: #ff6600;
+}
+
+.footerRight p {
+  color: #000;
+  margin: 0.3rem 0;
+}
+
+.socialIcons {
+  margin-top: 1rem;
+}
+
+.socialIcons a {
+  color: #222;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #ff6600;
+}
+
+.bottomBar {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+}
+
+.bottomBar p {
+  color: #121212;
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

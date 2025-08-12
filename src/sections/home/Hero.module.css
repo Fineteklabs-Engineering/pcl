@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: flex-start;
   /* background: black; */
+  font-family: 'Playfair Display', serif;
 }
 
 .videoBg {
@@ -66,24 +67,26 @@
 }
 
 .ctaButton {
-  background: #FF7F11;
-  color: white;
-  padding: 0.8rem 2.5rem;
+  font-weight: 600;
   font-size: 1.1rem;
-  border: none;
+  color: black;
+  border: 2px solid var(--papconGreen);
+  padding: 0.6rem 1.8rem;
   border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
   cursor: pointer;
-  font-weight: 700;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 5px #FF7F11;
+  text-decoration: none;
+  user-select: none;
 }
 
 .ctaButton:hover {
-  background: #ff902f;
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px #FF7F11;
+background: var(--papconGreen);
+  color: white;
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.5);
+  transform: scale(1.05);
 }
 
-.ctaButton:active {
+/* .ctaButton:active {
   transform: translateY(0);
-}
+} */

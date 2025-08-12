@@ -1,8 +1,9 @@
 :root {
   --papconOrange: #FF7F11;
   --papconGreen: #A8E600;
-  --fontHeading: 'Poppins', sans-serif;
-  --fontBody: 'Inter', sans-serif;
+  --fontHeading: 'Playfair Display', serif;
+  --fontBody: 'Playfair Display', serif;
+ 
 }
 
 * {

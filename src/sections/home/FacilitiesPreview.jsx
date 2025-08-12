@@ -1,69 +1,156 @@
-// FacilitiesPreview.jsx
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./FacilitiesPreview.module.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const facilities = [
   {
+    id: "01",
     title: "Location",
     text: `Paper Converters (K) Ltd. is situated in Industrial Area on Olesoi Rd. (Off Lunga Lunga Rd). We are occupying 2 hectares of self-owned premises that houses over 100,000 square feet of factory floor.`,
     imgUrl: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/location.webp",
   },
   {
+    id: "02",
     title: "Equipment & Experience",
-    text: `With over 40 years of experience in the paper converting industry, we have acquired sophisticated manufacturing equipment from both Germany and the USA that gives us high performance and absolute precision. Our process of continuous investment in new technologies has allowed for the development of higher quality products and greater levels of customer satisfaction.`,
+    text: `With over 40 years of experience in the paper converting industry, we have acquired sophisticated manufacturing equipment from both Germany and the USA that gives us high performance and absolute precision.`,
     imgUrl: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/equipment.webp",
   },
   {
+    id: "03",
     title: "Office & Maintenance",
-    text: `Apart from our factory floor, we have 10,000 square feet of office space, which houses our purchasing, sales, accounts, administration and human resource departments. We also maintain an in-house workshop and spare department, which allows us to keep the factory running seamlessly, minimizing down-time for repairs and maintenance.`,
+    text: `Apart from our factory floor, we have 10,000 square feet of office space, which houses our purchasing, sales, accounts, administration and human resource departments.`,
     imgUrl: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/office.webp",
   },
 ];
 
 export default function FacilitiesPreview() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [barHeights, setBarHeights] = useState([]);
+  const [animationPhase, setAnimationPhase] = useState("grow");
+  const itemRefs = useRef([]);
+
+  
+  useEffect(() => {
+    const heights = itemRefs.current.map((ref) => ref?.offsetHeight || 0);
+    setBarHeights(heights);
+  }, [activeIndex]);
+
+  
+  useEffect(() => {
+    let timer;
+
+    const runSequence = (index) => {
+      
+      setAnimationPhase("shrink");
+
+      timer = setTimeout(() => {
+        
+        const nextIndex = (index + 1) % facilities.length;
+        setActiveIndex(nextIndex);
+
+        
+        setTimeout(() => {
+          setAnimationPhase("grow");
+
+          
+          timer = setTimeout(() => runSequence(nextIndex), 5000);
+        }, 500);
+      }, 2000); 
+    };
+
+    runSequence(0);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className={styles.facilitiesPreview}>
-      <h2 className={styles.sectionTitle}>Our Facilities</h2>
-      {facilities.map(({ title, text, imgUrl }, index) => {
-        const isEven = index % 2 === 1;
-        return (
-          <motion.div
-            key={title}
-            className={`${styles.facilityBlock} ${
-              isEven ? styles.reverse : ""
-            }`}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: isEven ? 100 : -100 },
-            }}
-          >
+  <h2 className={styles.sectionTitle}>
+  <span className={styles.sectionTitleSpan}>Our</span> Facilities
+</h2>
+
+
+      <div className={styles.facilitiesContainer}>
+      
+        <div className={styles.leftColumn}>
+          <AnimatePresence mode="wait">
             <motion.img
-              src={imgUrl}
-              alt={title}
+              key={facilities[activeIndex].imgUrl}
+              src={facilities[activeIndex].imgUrl}
+              alt={facilities[activeIndex].title}
               className={styles.facilityImage}
-              initial={{ opacity: 0, x: isEven ? 100 : -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             />
-            <motion.div
-              className={styles.facilityContent}
-              initial={{ opacity: 0, x: isEven ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h3 className={styles.facilityTitle}>{title}</h3>
-              <p className={styles.facilityText}>{text}</p>
-            </motion.div>
-          </motion.div>
-        );
-      })}
+          </AnimatePresence>
+        </div>
+
+       
+        <div className={styles.rightColumn}>
+          {facilities.map((item, index) => (
+            <div key={item.id} className={styles.facilityItem}>
+              <div className={styles.textWrapper}>
+                <div className={styles.progressContainer}>
+                  <motion.div
+                    className={styles.progressBar}
+                    initial={{ height: 0, backgroundPosition: "top" }}
+                    animate={
+                      index === activeIndex
+                        ? animationPhase === "grow"
+                          ? {
+                              height: barHeights[index] || 0,
+                              backgroundPosition: "bottom",
+                            }
+                          : {
+                              height: 0,
+                              backgroundPosition: "top",
+                            }
+                        : { height: 0, backgroundPosition: "top" }
+                    }
+                    transition={{
+                      height: {
+                        duration:
+                          animationPhase === "grow" ? 2.5 : 1,
+                        ease: "easeInOut",
+                      },
+                      backgroundPosition: {
+                        duration:
+                          animationPhase === "grow" ? 2.5 : 1,
+                        ease: "easeInOut",
+                      },
+                    }}
+                  />
+                </div>
+
+                <div
+                  ref={(el) => (itemRefs.current[index] = el)}
+                  className={styles.textContent}
+                >
+                  <h3 className={styles.facilityHeading}>{item.title}</h3>
+                  <AnimatePresence>
+                    {index === activeIndex && (
+                      <motion.p
+                        className={styles.facilityText}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{
+                          duration: 0.5,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        {item.text}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

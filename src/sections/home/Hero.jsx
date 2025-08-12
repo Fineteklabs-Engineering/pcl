@@ -55,20 +55,13 @@ export default function Hero() {
           the East African Region.
         </motion.p>
         <motion.button
-          whileHover={{ scale: 1.1, boxShadow: "0 0 12px #FF7F11" }}
-          whileTap={{ scale: 0.95 }}
-          className={styles.ctaButton}
-          animate={{
-            boxShadow: [
-              "0 0 5px #FF7F11",
-              "0 0 15px #FF7F11",
-              "0 0 5px #FF7F11",
-            ],
-          }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        >
-          Learn More
-        </motion.button>
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className={styles.ctaButton}
+>
+  Learn More
+</motion.button>
+
       </motion.div>
     </section>
   );

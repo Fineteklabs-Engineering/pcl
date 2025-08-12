@@ -43,17 +43,17 @@ export default function MiniGallery() {
     ? images 
     : images.filter(img => img.category === activeFilter);
 
-  // Helper function for animation initial state based on column
+ 
   const getInitialAnimation = (index) => {
     const col = index % 3;
     if (col === 0) {
-      // left column: slide from left
+      
       return { opacity: 0, x: -50 };
     } else if (col === 1) {
-      // middle column: slide from bottom
+      
       return { opacity: 0, y: 50 };
     } else {
-      // right column: slide from right
+   
       return { opacity: 0, x: 50 };
     }
   };
@@ -66,18 +66,16 @@ export default function MiniGallery() {
       viewport={{ once: true, margin: "0px 0px -100px 0px" }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <motion.h2 
-        className={styles.heading}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <span className={styles.headingDecor} aria-hidden="true">✻</span>
-        Our Gallery
-        <span className={styles.headingDecor} aria-hidden="true">✻</span>
-      </motion.h2>
-      
+      <motion.h2
+  className={styles.heading}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+>
+  <span className={styles.headingSpan}>Our</span> Gallery
+</motion.h2>
+
       <motion.div 
         className={styles.filterButtons}
         initial={{ opacity: 0, y: 20 }}
@@ -138,9 +136,7 @@ export default function MiniGallery() {
       >
         <Link to="/gallery" className={styles.button}>
           <span>Explore Full Gallery</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+         
         </Link>
       </motion.div>
     </motion.section>

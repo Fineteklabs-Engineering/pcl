@@ -1,0 +1,219 @@
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/history-hero.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 25, 25, 0.6);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.slideLeft,
+.slideRight {
+  display: inline-block;
+  opacity: 0;
+  background: linear-gradient(90deg, #FF7F11, #A8E600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+}
+
+
+.slideLeft {
+  transform: translateX(-100%);
+}
+
+.slideRight {
+  transform: translateX(100%);
+}
+
+
+.animate.slideLeft {
+  animation: slideInFromLeft 1s forwards ease-out;
+}
+
+.animate.slideRight {
+  animation: slideInFromRight 1s forwards ease-out;
+}
+
+
+/* Animations */
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #f0e9d2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+}
+
+.subtitleAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  animation: bounce 2s infinite;
+}
+
+.arrow {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 3px solid #f0e9d2;
+  border-bottom: 3px solid #f0e9d2;
+  transform: rotate(-45deg);
+  margin: 0 auto;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+
+/* Tablets & small laptops */
+@media (max-width: 992px) {
+  .hero {
+    height: 80vh;
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .hero {
+    height: 70vh;
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .slideLeft,
+  .slideRight {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .hero {
+    height: 60vh;
+    padding: 0 0.8rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .slideLeft,
+  .slideRight {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    height: 60vh;
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .slideLeft,
+  .slideRight {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}

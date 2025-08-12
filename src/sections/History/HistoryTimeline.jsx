@@ -29,13 +29,12 @@ const milestones = [
   },
 ];
 
-// Variants for sliding in from left
+
 const leftVariants = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-// Variants for sliding in from right
 const rightVariants = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },

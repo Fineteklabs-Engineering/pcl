@@ -33,7 +33,7 @@ export default function Footer() {
        
         <div className={styles.footerRight}>
           <h4>Contact Us</h4>
-          <p>IMombasa, Kenya</p>
+          <p>Industrial Area on Olesoi Rd, Kenya</p>
           <p>Phone: +254 700 000 000</p>
           <p>Email: info@papconkenya.com</p>
           <div className={styles.socialIcons}>

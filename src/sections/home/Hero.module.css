@@ -10,6 +10,7 @@
   justify-content: flex-start;
   /* background: black; */
   font-family: 'Playfair Display', serif;
+  
 }
 
 .videoBg {
@@ -90,3 +91,73 @@ background: var(--papconGreen);
 /* .ctaButton:active {
   transform: translateY(0);
 } */
+
+
+
+@media (max-width: 1200px) {
+  .hero {
+    padding: 0 10vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 5vw;
+    justify-content: center;
+    text-align: center;
+  }
+  .heroContent {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .heading {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+  .subheading {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+  }
+  .ctaButton {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    height: 70vh; 
+    padding: 0 4vw;
+    justify-content: center;
+  }
+  .heroContent {
+    max-width: 90%;
+    padding: 0 1rem;
+  }
+  .heading {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+  }
+  .subheading {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  }
+  .ctaButton {
+    font-size: 0.95rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 0 2vw;
+  }
+  .heading {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+  .subheading {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+}

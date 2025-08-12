@@ -1,13 +1,12 @@
-
 .galleryPreview {
   max-width: 1400px;
   margin: 6rem auto;
   padding: 0 2rem;
   text-align: center;
   position: relative;
-  font-family: 'Playfair Display', serif
+  font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
 }
-
 
 .heading {
   font-family: var(--fontHeading);
@@ -18,8 +17,9 @@
   color: #222;
   position: relative;
 }
+
 .headingSpan {
-  color:#f28c28
+  color:#f28c28;
 }
 
 .heading::after {
@@ -32,7 +32,6 @@
   background-color: #f28c28;
   border-radius: 2px;
 }
-
 
 .headingDecor {
   color: #f28c28;
@@ -59,6 +58,7 @@
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2.5rem;
+  flex-wrap: nowrap;
 }
 
 .filterButton {
@@ -71,6 +71,7 @@
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .filterButton:hover {
@@ -99,7 +100,7 @@
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  aspect-ratio: 4/3;
+  aspect-ratio: 4 / 3;
   background: #f5f5f5;
   cursor: pointer;
 }
@@ -147,7 +148,7 @@
 }
 
 .button {
- font-weight: 600;
+  font-weight: 600;
   font-size: 1.1rem;
   color: black;
   border: 2px solid var(--papconGreen);
@@ -176,6 +177,7 @@
 }
 
 
+
 @media (max-width: 1024px) {
   .gridContainer {
     gap: 1.5rem;
@@ -194,6 +196,22 @@
 }
 
 @media (max-width: 600px) {
+
+  .filterButtons {
+    flex-wrap: nowrap; 
+    overflow-x: auto;  
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  .filterButton {
+    flex: 0 0 auto; 
+    padding: 0.4rem 1rem; 
+    font-size: 0.9rem; 
+    min-width: auto; 
+    white-space: nowrap; 
+  }
+
+
   .gridContainer {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -210,7 +228,5 @@
     font-size: 1.8rem;
   }
   
-  .filterButtons {
-    flex-wrap: wrap;
-  }
+ 
 }

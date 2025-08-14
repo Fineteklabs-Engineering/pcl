@@ -7,7 +7,7 @@ import History from "./pages/History";
 // import Facilities from "./pages/Facilities";
 // import CoreBusinesses from "./pages/CoreBusinesses";
 // import Gallery from "./pages/Gallery";
-// import Contact from "./pages/Contact";
+import Contact from "./pages/Contact";
 import "./styles/global.css";
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
         {/* <Route path="/facilities" element={<Facilities />} /> */}
         {/* <Route path="/core-businesses" element={<CoreBusinesses />} /> */}
         {/* <Route path="/gallery" element={<Gallery />} /> */}
-        {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

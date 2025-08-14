@@ -4,6 +4,10 @@ import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/global.css";
 
+
+
+
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -12,7 +16,7 @@ export default function Navbar() {
     { path: "/", label: "Home" },
     { path: "/history", label: "History" },
     { path: "/facilities", label: "Facilities" },
-    { path: "/core-businesses", label: "Core Businesses" },
+    // { path: "/core-businesses", label: "Core Businesses" },
     { path: "/gallery", label: "Gallery" },
     { path: "/contact", label: "Contact" },
   ];

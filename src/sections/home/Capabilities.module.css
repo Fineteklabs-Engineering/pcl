@@ -1,0 +1,116 @@
+:root {
+  --papconOrange: #FF7F11;
+  --papconGreen: #A8E600;
+}
+
+.capabilities {
+  background-size: cover;
+  background-position: center;
+  margin-top: 8%;
+  height: 45vh; 
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.title span {
+  color: var(--papconOrange);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.capability h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--papconOrange);
+  margin-bottom: 0.5rem;
+}
+
+.capability p {
+  font-size: 1.1rem;
+  /* color: var(--papconGreen); */
+  color: #fff;
+  font-weight: 500;
+}
+
+
+
+@media (max-width: 1024px) {
+  .capabilities {
+    height: 55vh; 
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .capability h2 {
+    font-size: 2.2rem;
+  }
+  .capability p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .capabilities {
+    height: auto; 
+    padding: 3rem 0;
+  }
+  .overlay {
+    padding: 3rem 1rem;
+  }
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .capability h2 {
+    font-size: 2rem;
+  }
+  .capability p {
+    font-size: 0.95rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .capabilities {
+    margin-top: 12%;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .container {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+  .capability h2 {
+    font-size: 1.8rem;
+  }
+  .capability p {
+    font-size: 0.9rem;
+  }
+}

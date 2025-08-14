@@ -9,6 +9,7 @@ import History from "./pages/History";
 // import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import "./styles/global.css";
+// import CoreBusiness from "./sections/home/CoreBusiness";
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/history" element={<History />} />
         {/* <Route path="/facilities" element={<Facilities />} /> */}
-        {/* <Route path="/core-businesses" element={<CoreBusinesses />} /> */}
+       {/* <Route path="/core-businesses" element={<CoreBusiness />} /> */}
         {/* <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>

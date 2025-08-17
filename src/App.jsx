@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import History from "./pages/History";
 // import Facilities from "./pages/Facilities";
 // import CoreBusinesses from "./pages/CoreBusinesses";
-// import Gallery from "./pages/Gallery";
+import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import "./styles/global.css";
 // import CoreBusiness from "./sections/home/CoreBusiness";
@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/history" element={<History />} />
         {/* <Route path="/facilities" element={<Facilities />} /> */}
        {/* <Route path="/core-businesses" element={<CoreBusiness />} /> */}
-        {/* <Route path="/gallery" element={<Gallery />} /> */}
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

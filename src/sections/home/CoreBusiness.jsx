@@ -31,6 +31,7 @@ const COLUMNS = 5;
 
 export default function CoreBusiness() {
   const [isVisible, setIsVisible] = useState(false);
+  const [screenSize, setScreenSize] = useState('desktop');
   const sectionRef = useRef(null);
   const reducedMotion = useReducedMotion();
 
@@ -43,12 +44,28 @@ export default function CoreBusiness() {
     restDelta: 0.001,
   };
 
+
+  const getGridConfig = () => {
+    if (typeof window === 'undefined') return { columns: 5, cardSize: 180, gap: 24 };
+    
+    const width = window.innerWidth;
+    if (width <= 480) {
+      return { columns: 2, cardSize: 120, gap: 12 };
+    } else if (width <= 768) {
+      return { columns: 2, cardSize: 140, gap: 16 };
+    } else if (width <= 1200) {
+      return { columns: 4, cardSize: 160, gap: 20 };
+    }
+    return { columns: 5, cardSize: 180, gap: 24 };
+  };
+
   const calculateGridPosition = (index) => {
-    const row = Math.floor(index / COLUMNS);
-    const col = index % COLUMNS;
+    const { columns, cardSize, gap } = getGridConfig();
+    const row = Math.floor(index / columns);
+    const col = index % columns;
     return {
-      x: col * (CARD_SIZE + GAP),
-      y: row * (CARD_SIZE + GAP),
+      x: col * (cardSize + gap),
+      y: row * (cardSize + gap),
     };
   };
 
@@ -60,6 +77,22 @@ export default function CoreBusiness() {
   });
 
   useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setScreenSize('small-mobile');
+      } else if (width <= 768) {
+        setScreenSize('mobile');
+      } else if (width <= 1200) {
+        setScreenSize('tablet');
+      } else {
+        setScreenSize('desktop');
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
        
@@ -69,7 +102,10 @@ export default function CoreBusiness() {
     );
     
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -99,8 +135,8 @@ export default function CoreBusiness() {
               transition: { duration: 0.3 }
             } : {}}
             style={{
-              width: CARD_SIZE,
-              height: CARD_SIZE,
+              width: getGridConfig().cardSize,
+              height: getGridConfig().cardSize,
               originX: 0.5,
               originY: 0.5,
             }}

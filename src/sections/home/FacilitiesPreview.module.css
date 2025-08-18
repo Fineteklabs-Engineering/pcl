@@ -87,9 +87,9 @@
   width: 100%;
   height: 0;
   border-radius: 2px;
-  background: linear-gradient(to bottom, var(--papconOrange) 50%, transparent 100%);
-  background-size: 100% 200%;
-  background-position: top;
+  background: var(--papconOrange);
+  transform-origin: top;
+  transition: height 0.1s ease-out;
 }
 
 
@@ -112,7 +112,60 @@
 
 
 
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) and (min-width: 901px) {
+  .facilitiesPreview {
+    padding: 3rem 1.5rem;
+    height: 100vh;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 7rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+  
+  .facilitiesContainer {
+    gap: 5rem;
+  }
+  
+  .facilityImage {
+    max-height: 320px;
+  }
+  
+  .facilityHeading {
+    font-size: 1.4rem;
+  }
+  
+  .facilityText {
+    font-size: 0.95rem;
+    max-width: 480px;
+    margin-left: 0;
+  }
+  
+  .progressContainer {
+    display: none;
+  }
+  
+  .progressBar {
+    display: none;
+  }
+  
+  .textWrapper {
+    gap: 1rem;
+  }
+}
+
+
+@media (max-width: 900px) and (min-width: 769px) {
+  .facilitiesPreview {
+    padding: 2.5rem 1rem;
+    height: auto;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 4rem;
+  }
+  
   .facilitiesContainer {
     flex-direction: column;
     gap: 3rem;
@@ -123,6 +176,68 @@
     flex: none;
     width: 100%;
   }
+  
+  .leftColumn {
+    order: 1;
+  }
+  
+  .rightColumn {
+    order: 2;
+    gap: 2.5rem;
+  }
+
+  .facilityText {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .progressContainer {
+    display: none;
+  }
+
+  .progressBar {
+    display: none;
+  }
+
+  .textWrapper {
+    gap: 1rem;
+  }
+  
+  .facilityImage {
+    max-height: 250px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .facilitiesPreview {
+    padding: 2.5rem 1rem;
+    height: auto;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 4rem;
+  }
+  
+  .facilitiesContainer {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    flex: none;
+    width: 100%;
+  }
+  
+  .leftColumn {
+    order: 1;
+  }
+  
+  .rightColumn {
+    order: 2;
+    gap: 2.5rem;
+  }
 
   .facilityText {
     margin-left: calc(4px + 1rem);
@@ -130,7 +245,8 @@
   }
 
   .progressContainer {
-    height: 50px;
+    height: auto;
+    min-height: 20px;
     margin-right: 1rem;
   }
 
@@ -138,8 +254,60 @@
     gap: 1rem;
     flex-wrap: wrap;
   }
+  
+  .facilityImage {
+    max-height: 250px;
+  }
 }
+
+@media (max-width: 768px) {
+  .facilitiesPreview {
+    padding: 2rem 1rem;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 3rem;
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+  
+  .facilitiesContainer {
+    gap: 2.5rem;
+  }
+  
+  .rightColumn {
+    gap: 2rem;
+  }
+  
+  .facilityImage {
+    max-height: 200px;
+    border-radius: 8px;
+  }
+  
+  .facilityHeading {
+    font-size: 1.25rem;
+  }
+  
+  .facilityText {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .progressContainer {
+    width: 3px;
+    margin-right: 0.8rem;
+  }
+}
+
+
 @media (max-width: 600px) {
+  .facilitiesPreview {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 2.5rem;
+  }
+  
   .textWrapper {
     flex-direction: column;
     align-items: flex-start;
@@ -147,7 +315,7 @@
   }
 
   .progressContainer {
-display: none;
+    display: none;
   }
 
   .progressBar {
@@ -157,39 +325,76 @@ display: none;
   .facilityText {
     margin-left: 0;
     max-width: 100%;
+    font-size: 0.85rem;
+  }
+  
+  .facilityHeading {
+    font-size: 1.1rem;
+  }
+  
+  .facilityImage {
+    max-height: 180px;
+    border-radius: 6px;
   }
 }
 
 
+
 @media (max-width: 400px) {
+  .facilitiesPreview {
+    padding: 1.25rem 0.5rem;
+  }
+  
   .sectionTitle {
-    font-size: clamp(1.25rem, 6vw, 2rem);
-    margin-bottom: 3rem;
+    font-size: clamp(1.25rem, 6vw, 1.75rem);
+    margin-bottom: 2rem;
   }
 
   .facilitiesContainer {
     gap: 1.5rem;
   }
+  
+  .rightColumn {
+    gap: 1.5rem;
+  }
 
   .facilityHeading {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .facilityText {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
-   .progressContainer {
-display: none;
+  
+  .facilityImage {
+    max-height: 160px;
+    border-radius: 4px;
+  }
+  
+  .progressContainer {
+    display: none;
   }
 
   .progressBar {
     display: none;
   }
 }
-@media (orientation: landscape) and (max-width: 900px) {
+
+@media (orientation: landscape) and (max-width: 1024px) and (min-width: 768px) {
+  .facilitiesPreview {
+    padding: 2.5rem 2rem;
+    height: 100vh;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 4rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  }
+  
   .facilitiesContainer {
-    flex-direction: row; /* row to utilize horizontal space */
-    gap: 3rem;           /* smaller gap to fit better */
+    flex-direction: row;
+    gap: 4rem;
   }
 
   .leftColumn,
@@ -199,23 +404,88 @@ display: none;
   }
 
   .facilityImage {
-    max-height: 250px; /* smaller to fit landscape */
+    max-height: 280px;
   }
 
   .facilityText {
-    font-size: 0.95rem;
-    margin-left: 1rem;
-    max-width: 90%;
+    font-size: 0.9rem;
+    margin-left: 0;
+    max-width: 95%;
+    line-height: 1.5;
   }
 
   .progressContainer {
-    width: 4px;
-    min-height: 50px;
-    margin-right: 1rem;
+    display: none;
+  }
+
+  .progressBar {
+    display: none;
   }
 
   .textWrapper {
     gap: 1rem;
+  }
+  
+  .rightColumn {
+    gap: 2.5rem;
+  }
+  
+  .facilityHeading {
+    font-size: 1.3rem;
+  }
+}
+
+
+@media (orientation: landscape) and (max-width: 600px) {
+  .facilitiesPreview {
+    padding: 1.5rem 1rem;
+    height: 100vh;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .facilitiesContainer {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .leftColumn,
+  .rightColumn {
+    flex: 1;
+  }
+  
+  .facilityImage {
+    max-height: 160px;
+  }
+  
+  .progressContainer {
+    display: none;
+  }
+  
+  .progressBar {
+    display: none;
+  }
+  
+  .facilityText {
+    font-size: 0.8rem;
+    margin-left: 0;
+    line-height: 1.3;
+  }
+  
+  .textWrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .facilityHeading {
+    font-size: 1rem;
+  }
+  
+  .rightColumn {
+    gap: 1.2rem;
   }
 }
 

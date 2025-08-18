@@ -1,29 +1,32 @@
 .timelineSection {
-  padding: 4rem 1rem;
-  background: #fff;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #fdfdfd 0%, #f8f9fa 100%);
   font-family: "Playfair Display", serif;
   color: #4a4a4a;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto 6rem;
   position: relative;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .timelineContainer {
   position: relative;
-  padding: 2rem 0;
-  /* vertical center line */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, #ff7f11, #a8e600);
-    border-radius: 2px;
-    z-index: 0;
-  }
+  padding: 3rem 0;
+}
+
+.timelineContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff7f11 0%, #a8e600 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(255, 127, 17, 0.3);
+  z-index: 0;
 }
 
 .milestoneItem {
@@ -48,74 +51,126 @@
 
 .content {
   background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255, 127, 17, 0.15);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(255, 127, 17, 0.1), 0 3px 8px rgba(0, 0, 0, 0.05);
   position: relative;
+  border: 1px solid rgba(255, 127, 17, 0.1);
+  transition: all 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(255, 127, 17, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 .heading {
   text-align: center;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 3rem;
-  
-  color:#333;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #333;
   font-family: 'Playfair Display', serif;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.year {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #ff7f11;
-  margin-bottom: 0.25rem;
   letter-spacing: 0.05em;
 }
 
-.title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.year {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #000;
+  color: #ff7f11;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.3;
 }
 
 .description {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: #000;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
 }
 
 .circle {
   position: absolute;
-  top: 1.5rem;
-  width: 20px;
-  height: 20px;
-  background: #a8e600;
+  top: 2rem;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #a8e600, #ff7f11);
   border-radius: 50%;
   border: 4px solid white;
-  box-shadow: 0 0 10px #a8e600aa;
+  box-shadow: 0 0 15px rgba(168, 230, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.milestoneItem:hover .circle {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(168, 230, 0, 0.6), 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .left .circle {
-  right: -53px;
+  right: -60px;
 }
 
 .right .circle {
-  left: -53px;
+  left: -60px;
 }
 
-/*Responsive */
+/* Large tablets */
+@media (max-width: 1024px) {
+  .timelineSection {
+    padding: 4rem 1rem;
+    max-width: 95%;
+    margin: 0 auto 5rem;
+  }
+  
+  .heading {
+    margin-bottom: 3rem;
+  }
+  
+  .milestoneItem {
+    width: 48%;
+    padding: 1rem 1.5rem;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+}
 
-@media (max-width: 768px) {
+/* Small tablets */
+@media (max-width: 900px) {
+  .timelineSection {
+    padding: 3rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .timelineContainer {
+    padding: 2rem 0;
+  }
+  
   .timelineContainer::before {
-    left: 20px;
+    left: 30px;
+    width: 3px;
   }
 
   .milestoneItem {
     width: 100%;
-    padding-left: 60px;
+    padding-left: 70px;
     text-align: left;
     margin-bottom: 3rem;
   }
@@ -126,8 +181,137 @@
   }
 
   .circle {
-    top: 1.2rem;
-    left: 10px !important;
+    top: 1.5rem;
+    left: 18px !important;
     right: auto !important;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .timelineSection {
+    padding: 2.5rem 0.75rem;
+    margin: 0 auto 4rem;
+  }
+  
+  .heading {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 2.5rem;
+  }
+  
+  .timelineContainer::before {
+    left: 25px;
+  }
+
+  .milestoneItem {
+    padding-left: 60px;
+    margin-bottom: 2.5rem;
+  }
+
+  .circle {
+    top: 1.5rem;
+    left: 16px !important;
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+  }
+  
+  .content {
+    padding: 1.25rem;
+  }
+  
+  .year {
+    font-size: 1rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 600px) {
+  .timelineSection {
+    padding: 2rem 0.5rem;
+  }
+  
+  .timelineContainer::before {
+    left: 20px;
+  }
+
+  .milestoneItem {
+    padding-left: 50px;
+    margin-bottom: 2rem;
+  }
+
+  .circle {
+    left: 12px !important;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .content {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .year {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .timelineSection {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .heading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 2rem;
+  }
+  
+
+  
+  .milestoneItem {
+    padding-left: 45px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content {
+    padding: 0.75rem;
+  }
+  
+  .year {
+    font-size: 0.8rem;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .description {
+    font-size: 0.8rem;
   }
 }

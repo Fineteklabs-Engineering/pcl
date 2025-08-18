@@ -2,7 +2,7 @@
   background-color: #fff;
   color: black;
   padding: 3rem 1rem 1rem;
-  font-family: 'Play Display',serif;
+  font-family: 'Playfair Display', serif;
   margin-top: 10%;
 }
 
@@ -88,17 +88,66 @@
 
 
 
-/* Portrait */
-@media (max-width: 768px) {
+/* Large tablets */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 2.5rem 1rem 1rem;
+  }
+  
+  .footerContainer {
+    gap: 1.5rem;
+  }
+  
+  .footerLeft, .footerCenter, .footerRight {
+    flex: 1 1 200px;
+  }
+  
+  .logo {
+    width: 140px;
+  }
+  
+  .footerCenter h4, .footerRight h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 900px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+  
   .footerContainer {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    gap: 2rem;
   }
   
   .footerLeft, .footerCenter, .footerRight {
     flex: none;
     width: 100%;
+    max-width: 400px;
+  }
+  
+  .logo {
+    width: 130px;
+  }
+  
+  .socialIcons a {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 768px) {
+  .footerContainer {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footerLeft, .footerCenter, .footerRight {
     margin-bottom: 2rem;
   }
   
@@ -116,19 +165,18 @@
   }
 }
 
-/*  Landscape */
-@media (max-width: 768px) and (orientation: landscape) {
+/* Mobile landscape */
+@media (max-width: 900px) and (orientation: landscape) {
   .footer {
-    margin-top: 20vh;  
-    padding: 4rem 1rem 2rem;
+    padding: 2rem 1rem 1rem;
   }
   
   .footerContainer {
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     gap: 1.5rem;
     text-align: center;
-    align-items: center;
+    align-items: flex-start;
   }
   
   .footerLeft, .footerCenter, .footerRight {
@@ -138,20 +186,46 @@
   }
   
   .logo {
-    width: 140px;
+    width: 120px;
   }
   
   .socialIcons a {
     margin-right: 0.75rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.5rem 0.75rem 1rem;
+  }
+  
+  .footerLeft, .footerCenter, .footerRight {
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo {
+    width: 110px;
+  }
+  
+  .footerCenter h4, .footerRight h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footerLeft p, .footerRight p {
+    font-size: 0.9rem;
+  }
+  
+  .socialIcons a {
     font-size: 1.3rem;
   }
 }
 
-
 @media (max-width: 400px) {
   .footer {
-    padding: 2rem 1rem 1rem;
-    margin-top: 15vh;
+    padding: 1.25rem 0.5rem 1rem;
   }
   
   .logo {
@@ -162,7 +236,16 @@
     font-size: 1rem;
   }
   
+  .footerLeft p, .footerRight p {
+    font-size: 0.85rem;
+  }
+  
   .bottomBar p {
     font-size: 0.8rem;
+  }
+  
+  .socialIcons a {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
   }
 }

@@ -1,0 +1,28 @@
+{
+  "name": "Papcon Kenya - Paper Products Manufacturer",
+  "short_name": "Papcon Kenya",
+  "description": "Leading paper products manufacturer in East Africa since 1971",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#FF7F11",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "manufacturing", "industrial"],
+  "lang": "en-US",
+  "scope": "/",
+  "id": "papcon-kenya"
+}

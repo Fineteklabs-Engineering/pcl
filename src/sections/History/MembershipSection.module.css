@@ -63,6 +63,10 @@
 
 
 @media (max-width: 600px) {
+  .heading {
+    font-size: 1.6rem;
+      }
+  
   .conveyorWrapper {
     width: 405px; /* 3 × (120 + 30) */
     height: 80px;
@@ -76,6 +80,7 @@
     height: 60px;
     margin: 0 15px;
   }
+
 }
 
 @keyframes scrollLeftMobile {
@@ -86,3 +91,4 @@
     transform: translateX(-405px);
   }
 }
+

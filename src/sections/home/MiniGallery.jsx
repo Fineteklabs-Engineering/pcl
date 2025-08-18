@@ -45,17 +45,16 @@ export default function MiniGallery() {
 
  
   const getInitialAnimation = (index) => {
-    const col = index % 3;
-    if (col === 0) {
-      
-      return { opacity: 0, x: -50 };
-    } else if (col === 1) {
-      
-      return { opacity: 0, y: 50 };
-    } else {
-   
-      return { opacity: 0, x: 50 };
-    }
+    // Simple staggered animation that works well for both 2 and 3 column layouts
+    const animations = [
+      { opacity: 0, x: -30, y: 20 },
+      { opacity: 0, x: 30, y: 20 },
+      { opacity: 0, y: 30 },
+      { opacity: 0, x: -30, y: 20 },
+      { opacity: 0, x: 30, y: 20 },
+      { opacity: 0, y: 30 }
+    ];
+    return animations[index % animations.length] || { opacity: 0, y: 20 };
   };
 
   return (

@@ -21,6 +21,16 @@ const item = {
 };
 
 export default function Hero() {
+  const scrollToHistoryPreview = () => {
+    const element = document.getElementById('history-preview');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className={styles.hero}>
       <motion.video
@@ -58,6 +68,7 @@ export default function Hero() {
   whileHover={{ scale: 1.05 }}
   whileTap={{ scale: 0.95 }}
   className={styles.ctaButton}
+  onClick={scrollToHistoryPreview}
 >
   Learn More
 </motion.button>

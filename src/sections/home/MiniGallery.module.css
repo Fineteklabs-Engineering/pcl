@@ -89,9 +89,9 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
   margin: 3rem 0;
+
 }
 
 .gridItem {
@@ -191,42 +191,79 @@
 @media (max-width: 900px) {
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
   }
 }
 
 @media (max-width: 600px) {
+  .galleryPreview {
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
 
   .filterButtons {
     flex-wrap: nowrap; 
     overflow-x: auto;  
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
+    gap: 0.8rem;
+    padding: 0 0.5rem;
   }
 
   .filterButton {
     flex: 0 0 auto; 
-    padding: 0.4rem 1rem; 
+    padding: 0.5rem 1.2rem; 
     font-size: 0.9rem; 
     min-width: auto; 
     white-space: nowrap; 
   }
 
-
   .gridContainer {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+   
+  }
+  
+  .gridItem {
+    aspect-ratio: 4/5;
+    border-radius: 12px;
   }
   
   .heading {
-    font-size: 2.25rem;
-    flex-direction: column;
-    gap: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
   
   .headingDecor {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
- 
+  .button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .galleryPreview {
+    padding: 0 0.75rem;
+  }
+  
+  .gridContainer {
+    gap: 0.75rem;
+  }
+  
+  .gridItem {
+    aspect-ratio: 1/1;
+  }
+  
+  .heading {
+    font-size: 1.75rem;
+  }
+  
+  .filterButton {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
 }

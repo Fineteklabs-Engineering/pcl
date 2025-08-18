@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 import styles from "./Gallery.module.css";
 
 const facilities = [
@@ -95,8 +96,27 @@ export default function GalleryPage() {
 
   const images = activeTab === "facilities" ? facilities : products;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Papcon Kenya Gallery",
+    "description": "Explore our state-of-the-art facilities and premium paper products through our comprehensive gallery showcasing manufacturing excellence.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Papcon Kenya"
+    }
+  };
+
   return (
     <div className={styles.galleryPage}>
+      <SEO
+        title="Gallery - Papcon Kenya Facilities & Products"
+        description="Explore Papcon Kenya's state-of-the-art manufacturing facilities and premium paper products. View our comprehensive gallery showcasing world-class infrastructure and quality products."
+        keywords="Papcon Kenya gallery, manufacturing facilities, paper products gallery, factory photos, production facilities, quality paper products, manufacturing infrastructure, industrial facilities Kenya"
+        url="https://papconkenya.com/gallery"
+        image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
+        structuredData={structuredData}
+      />
      
       <section className={styles.hero}>
         <motion.h1

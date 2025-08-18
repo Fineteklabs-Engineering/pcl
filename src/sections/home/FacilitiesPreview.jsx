@@ -93,35 +93,30 @@ export default function FacilitiesPreview() {
             <div key={item.id} className={styles.facilityItem}>
               <div className={styles.textWrapper}>
                 <div className={styles.progressContainer}>
-                  <motion.div
-                    className={styles.progressBar}
-                    initial={{ height: 0, backgroundPosition: "top" }}
-                    animate={
-                      index === activeIndex
-                        ? animationPhase === "grow"
-                          ? {
-                              height: barHeights[index] || 0,
-                              backgroundPosition: "bottom",
-                            }
-                          : {
-                              height: 0,
-                              backgroundPosition: "top",
-                            }
-                        : { height: 0, backgroundPosition: "top" }
-                    }
-                    transition={{
-                      height: {
-                        duration:
-                          animationPhase === "grow" ? 2.5 : 1,
-                        ease: "easeInOut",
-                      },
-                      backgroundPosition: {
-                        duration:
-                          animationPhase === "grow" ? 2.5 : 1,
-                        ease: "easeInOut",
-                      },
-                    }}
-                  />
+                                      <motion.div
+                      className={styles.progressBar}
+                      initial={{ height: 0 }}
+                      animate={
+                        index === activeIndex
+                          ? animationPhase === "grow"
+                            ? {
+                                height: barHeights[index] || 80,
+                              }
+                            : {
+                                height: 0,
+                              }
+                          : { height: 0 }
+                      }
+                      transition={{
+                        height: {
+                          duration: animationPhase === "grow" ? 2.5 : 1,
+                          ease: "easeInOut",
+                        },
+                      }}
+                      style={{
+                        transformOrigin: "top",
+                      }}
+                    />
                 </div>
 
                 <div

@@ -2,10 +2,42 @@ import React from "react";
 import styles from "./Contact.module.css";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import SEO from "../components/SEO";
 
 export default function Contact() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Papcon Kenya",
+    "description": "Get in touch with Papcon Kenya for all your paper product needs. Connect with our team of experts committed to delivering excellence.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Papcon Kenya",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Industrial Area on Olesoi Rd",
+        "addressLocality": "Mombasa",
+        "addressCountry": "Kenya"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+254 700 000 000",
+        "email": "info@papconkenya.com",
+        "contactType": "customer service"
+      }
+    }
+  };
+
   return (
     <section className={styles.contactSection}>
+      <SEO
+        title="Contact Us - Papcon Kenya"
+        description="Ready to transform your vision into reality? Contact Papcon Kenya today. Our team of experts is here to listen, collaborate, and create something extraordinary together."
+        keywords="contact Papcon Kenya, paper manufacturer contact, Mombasa contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact"
+        url="https://papconkenya.com/contact"
+        image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/location.webp"
+        structuredData={structuredData}
+      />
    
 
 <div className={styles.headerWrapper}>
@@ -17,7 +49,7 @@ export default function Contact() {
   >
     <div className={styles.headerContent}>
       <h1>Let's Connect</h1>
-      <p>Have a question or want to discuss a project? Drop us a message below.</p>
+      <p>Ready to transform your vision into reality? We're here to listen, collaborate, and create something extraordinary together. Reach out today.</p>
     </div>
   </motion.div>
 </div>
@@ -67,7 +99,7 @@ export default function Contact() {
           <div className={styles.infoCard}>
             <h2>Contact Information</h2>
             <p className={styles.infoDescription}>
-              We're available to answer your questions and help with your needs.
+              Connect with our team of experts who are passionate about delivering excellence. We're committed to bringing your ideas to life with precision and care.
             </p>
             
             <ul className={styles.infoList}>
@@ -103,7 +135,6 @@ export default function Contact() {
         </motion.div>
       </div>
 
-  
       <motion.div
         className={styles.mapContainer}
         initial={{ opacity: 0, y: 40 }}

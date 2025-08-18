@@ -24,6 +24,7 @@ const item = {
 export default function HistoryPreview() {
   return (
     <motion.section
+      id="history-preview"
       className={styles.historyPreview}
       initial="hidden"
       whileInView="visible"

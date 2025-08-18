@@ -56,23 +56,25 @@ export default function HistoryTimeline() {
         {milestones.map((milestone, i) => {
           const isLeft = i % 2 === 0;
           return (
-            <motion.div
+            <div
               key={milestone.year}
               className={`${styles.milestoneItem} ${
                 isLeft ? styles.left : styles.right
               }`}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={isLeft ? leftVariants : rightVariants}
             >
-              <div className={styles.content}>
+              <motion.div
+                className={styles.content}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={isLeft ? leftVariants : rightVariants}
+              >
                 <h3 className={styles.year}>{milestone.year}</h3>
                 <h2 className={styles.title}>{milestone.title}</h2>
                 <p className={styles.description}>{milestone.description}</p>
-              </div>
+              </motion.div>
               <div className={styles.circle} />
-            </motion.div>
+            </div>
           );
         })}
       </div>

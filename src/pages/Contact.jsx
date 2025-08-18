@@ -8,11 +8,11 @@ export default function Contact() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact Papcon Kenya",
-    "description": "Get in touch with Papcon Kenya for all your paper product needs. Connect with our team of experts committed to delivering excellence.",
+    "name": "Contact Paper Converters(K) Ltd",
+    "description": "Get in touch with Paper Converters(K) Ltd for all your paper product needs. Connect with our team of experts committed to delivering excellence.",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Papcon Kenya",
+      "name": "Paper Converters(K) Ltd",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Industrial Area on Olesoi Rd",
@@ -31,9 +31,9 @@ export default function Contact() {
   return (
     <section className={styles.contactSection}>
       <SEO
-        title="Contact Us - Papcon Kenya"
-        description="Ready to transform your vision into reality? Contact Papcon Kenya today. Our team of experts is here to listen, collaborate, and create something extraordinary together."
-        keywords="contact Papcon Kenya, paper manufacturer contact, Mombasa contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact"
+        title="Contact Us - Paper Converters(K) Ltd"
+        description="Ready to transform your vision into reality? Contact Paper Converters(K) Ltd today. Our team of experts is here to listen, collaborate, and create something extraordinary together."
+        keywords="contact Paper Converters, contact Paper Converters K Ltd, contact Papcon Kenya, paper manufacturer contact, Mombasa contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact, paper converter contact"
         url="https://papconkenya.magical.africa/contact"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/location.webp"
         structuredData={structuredData}

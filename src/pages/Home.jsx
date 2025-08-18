@@ -12,8 +12,9 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Papcon Kenya",
-    "description": "Leading paper products manufacturer in East Africa since 1971, specializing in high-quality paper products and manufacturing excellence.",
+    "name": "Paper Converters(K) Ltd",
+    "alternateName": "Papcon Kenya",
+    "description": "Paper Converters(K) Ltd - Leading paper products manufacturer in East Africa since 1971, specializing in high-quality paper products and manufacturing excellence.",
     "url": "https://papconkenya.magical.africa",
     "logo": "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png",
     "foundingDate": "1971",
@@ -40,9 +41,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Papcon Kenya - Leading Paper Products Manufacturer in East Africa Since 1971"
-        description="Discover Papcon Kenya's excellence in paper manufacturing since 1971. Based in Mombasa, we deliver premium paper products, world-class facilities, and innovative solutions across East Africa."
-        keywords="Papcon Kenya, paper manufacturer, East Africa manufacturing, quality paper products, Mombasa industry, paper supplier Kenya, manufacturing excellence, industrial paper, paper production facilities"
+        title="Paper Converters(K) Ltd - Leading Paper Products Manufacturer in East Africa Since 1971"
+        description="Discover Paper Converters(K) Ltd's excellence in paper manufacturing since 1971. Based in Mombasa, we deliver premium paper products, world-class facilities, and innovative solutions across East Africa."
+        keywords="Paper Converters, Paper Converters K Ltd, Paper Converters Kenya, Papcon Kenya, paper manufacturer, East Africa manufacturing, quality paper products, Mombasa industry, paper supplier Kenya, manufacturing excellence, industrial paper, paper production facilities, paper converter, paper conversion"
         url="https://papconkenya.magical.africa"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
         structuredData={structuredData}

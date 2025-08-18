@@ -2,19 +2,19 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
-  title = "Papcon Kenya - Leading Paper Products Manufacturer in East Africa",
-  description = "Papcon Kenya is a premier manufacturer of high-quality paper products in East Africa since 1971. Based in Mombasa, Kenya, we deliver excellence in paper manufacturing across the region.",
-  keywords = "paper products, manufacturing, Kenya, East Africa, Mombasa, quality paper, industrial paper, paper supplier, paper manufacturer",
+  title = "Paper Converters(K) Ltd - Leading Paper Products Manufacturer in East Africa",
+  description = "Paper Converters(K) Ltd (Papcon Kenya) is a premier manufacturer of high-quality paper products in East Africa since 1971. Based in Mombasa, Kenya, we deliver excellence in paper manufacturing across the region.",
+  keywords = "Paper Converters, Paper Converters K Ltd, Paper Converters Kenya, Papcon Kenya, paper products, manufacturing, Kenya, East Africa, Mombasa, quality paper, industrial paper, paper supplier, paper manufacturer, paper converter, paper conversion",
   image = "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png",
   url = "https://papconkenya.magical.africa",
   type = "website",
-  author = "Papcon Kenya",
+  author = "Paper Converters(K) Ltd",
   canonical,
   noindex = false,
   nofollow = false,
   structuredData
 }) => {
-  const siteTitle = "Papcon Kenya";
+  const siteTitle = "Paper Converters(K) Ltd";
   const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
   
   const robots = `${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;

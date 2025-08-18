@@ -99,20 +99,20 @@ export default function GalleryPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    "name": "Papcon Kenya Gallery",
+    "name": "Paper Converters(K) Ltd Gallery",
     "description": "Explore our state-of-the-art facilities and premium paper products through our comprehensive gallery showcasing manufacturing excellence.",
     "publisher": {
       "@type": "Organization",
-      "name": "Papcon Kenya"
+      "name": "Paper Converters(K) Ltd"
     }
   };
 
   return (
     <div className={styles.galleryPage}>
       <SEO
-        title="Gallery - Papcon Kenya Facilities & Products"
-        description="Explore Papcon Kenya's state-of-the-art manufacturing facilities and premium paper products. View our comprehensive gallery showcasing world-class infrastructure and quality products."
-        keywords="Papcon Kenya gallery, manufacturing facilities, paper products gallery, factory photos, production facilities, quality paper products, manufacturing infrastructure, industrial facilities Kenya"
+        title="Gallery - Paper Converters(K) Ltd Facilities & Products"
+        description="Explore Paper Converters(K) Ltd's state-of-the-art manufacturing facilities and premium paper products. View our comprehensive gallery showcasing world-class infrastructure and quality products."
+        keywords="Paper Converters gallery, Paper Converters K Ltd gallery, Papcon Kenya gallery, manufacturing facilities, paper products gallery, factory photos, production facilities, quality paper products, manufacturing infrastructure, industrial facilities Kenya, paper converter facilities"
         url="https://papconkenya.magical.africa/gallery"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
         structuredData={structuredData}

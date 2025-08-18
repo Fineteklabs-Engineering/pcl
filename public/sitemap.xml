@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://papconkenya.com/</loc>
+    <loc>https://papconkenya.magical.africa/</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- History Page -->
   <url>
-    <loc>https://papconkenya.com/history</loc>
+    <loc>https://papconkenya.magical.africa/history</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
    <!-- Gallery Page -->
   <url>
-    <loc>https://papconkenya.com/gallery</loc>
+    <loc>https://papconkenya.magical.africa/gallery</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://papconkenya.com/contact</loc>
+    <loc>https://papconkenya.magical.africa/contact</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

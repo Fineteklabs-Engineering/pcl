@@ -113,7 +113,7 @@ export default function GalleryPage() {
         title="Gallery - Papcon Kenya Facilities & Products"
         description="Explore Papcon Kenya's state-of-the-art manufacturing facilities and premium paper products. View our comprehensive gallery showcasing world-class infrastructure and quality products."
         keywords="Papcon Kenya gallery, manufacturing facilities, paper products gallery, factory photos, production facilities, quality paper products, manufacturing infrastructure, industrial facilities Kenya"
-        url="https://papconkenya.com/gallery"
+        url="https://papconkenya.magical.africa/gallery"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
         structuredData={structuredData}
       />

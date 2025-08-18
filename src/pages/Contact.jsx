@@ -34,7 +34,7 @@ export default function Contact() {
         title="Contact Us - Papcon Kenya"
         description="Ready to transform your vision into reality? Contact Papcon Kenya today. Our team of experts is here to listen, collaborate, and create something extraordinary together."
         keywords="contact Papcon Kenya, paper manufacturer contact, Mombasa contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact"
-        url="https://papconkenya.com/contact"
+        url="https://papconkenya.magical.africa/contact"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/location.webp"
         structuredData={structuredData}
       />

@@ -6,7 +6,7 @@ const SEO = ({
   description = "Papcon Kenya is a premier manufacturer of high-quality paper products in East Africa since 1971. Based in Mombasa, Kenya, we deliver excellence in paper manufacturing across the region.",
   keywords = "paper products, manufacturing, Kenya, East Africa, Mombasa, quality paper, industrial paper, paper supplier, paper manufacturer",
   image = "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png",
-  url = "https://papconkenya.com",
+  url = "https://papconkenya.magical.africa",
   type = "website",
   author = "Papcon Kenya",
   canonical,

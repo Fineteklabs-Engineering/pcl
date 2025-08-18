@@ -14,7 +14,7 @@ export default function Home() {
     "@type": "Organization",
     "name": "Papcon Kenya",
     "description": "Leading paper products manufacturer in East Africa since 1971, specializing in high-quality paper products and manufacturing excellence.",
-    "url": "https://papconkenya.com",
+    "url": "https://papconkenya.magical.africa",
     "logo": "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png",
     "foundingDate": "1971",
     "address": {
@@ -43,7 +43,7 @@ export default function Home() {
         title="Papcon Kenya - Leading Paper Products Manufacturer in East Africa Since 1971"
         description="Discover Papcon Kenya's excellence in paper manufacturing since 1971. Based in Mombasa, we deliver premium paper products, world-class facilities, and innovative solutions across East Africa."
         keywords="Papcon Kenya, paper manufacturer, East Africa manufacturing, quality paper products, Mombasa industry, paper supplier Kenya, manufacturing excellence, industrial paper, paper production facilities"
-        url="https://papconkenya.com"
+        url="https://papconkenya.magical.africa"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
         structuredData={structuredData}
       />

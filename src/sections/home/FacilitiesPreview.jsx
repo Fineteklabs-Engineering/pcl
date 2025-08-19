@@ -65,8 +65,8 @@ export default function FacilitiesPreview() {
 
   return (
     <section className={styles.facilitiesPreview}>
-  <h2 className={styles.sectionTitle}>
-  <span className={styles.sectionTitleSpan}>Our</span> Facilities
+        <h2 className={styles.sectionTitle}>
+  Our <span className={styles.handUnderline}>Facilities</span>
 </h2>
 
 
@@ -109,7 +109,7 @@ export default function FacilitiesPreview() {
                       }
                       transition={{
                         height: {
-                          duration: animationPhase === "grow" ? 2.5 : 1,
+                          duration: animationPhase === "grow" ? 5 : 1,
                           ease: "easeInOut",
                         },
                       }}

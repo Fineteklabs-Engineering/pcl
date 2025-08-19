@@ -10,7 +10,6 @@ import "../styles/global.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
     { path: "/", label: "Home" },
@@ -21,17 +20,8 @@ export default function Navbar() {
     { path: "/contact", label: "Contact" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolledBg : ""}`}>
+    <nav className={styles.navbar}>
       <div className={styles.navContainer}>
         <Link to="/" className={styles.logo}>
           <img
@@ -53,11 +43,7 @@ export default function Navbar() {
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  isActive
-                    ? `${styles.active} ${styles.navLink} ${
-                        scrolled ? styles.scrolled : ""
-                      }`
-                    : `${styles.navLink} ${scrolled ? styles.scrolled : ""}`
+                  isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
                 }
               >
                 {link.label}
@@ -68,7 +54,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <div
-          className={styles.hamburger}
+          className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <div />
@@ -86,11 +72,25 @@ export default function Navbar() {
             exit={{ x: "100%" }}
             transition={{ duration: 0.3 }}
           >
+            {/* Close Button */}
+            <div className={styles.closeButton}>
+              <button 
+                className={styles.closeIcon}
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <span>×</span>
+              </button>
+            </div>
+
+            {/* Navigation Links */}
             {navLinks.map((link, i) => (
               <NavLink
                 key={link.path}
                 to={link.path}
-                className={styles.mobileLink}
+                className={({ isActive }) =>
+                  isActive ? `${styles.active} ${styles.mobileLink}` : styles.mobileLink
+                }
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

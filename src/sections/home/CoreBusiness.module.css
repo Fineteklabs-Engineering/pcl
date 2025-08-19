@@ -4,9 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: 
+    linear-gradient(90deg, transparent 23px, rgba(200, 200, 200, 0.3) 24px),
+    linear-gradient(180deg, transparent 23px, rgba(200, 200, 200, 0.3) 24px),
+    #fafafa;
+  background-size: 24px 24px;
   overflow: hidden;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--fontPrimary);
 }
 
 .heading {
@@ -16,6 +20,7 @@
   text-align: center;
   color: #222;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  font-family: var(--fontHeading);
 }
 
 .container {
@@ -68,14 +73,14 @@
 .icon {
   width: 36px;
   height: 36px;
-  color: #f97316;
- 
+  color: #6b7280;
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .card:hover .icon {
   transform: scale(1.1);
+  color: #4b5563;
 }
 
 .crease {

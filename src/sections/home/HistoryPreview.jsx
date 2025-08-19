@@ -33,12 +33,7 @@ export default function HistoryPreview() {
     >
       <div className={styles.historyPreviewContent}>
         <motion.h2 className={styles.heading} variants={item}>
-          Our <span>Legacy</span>
-          <motion.div
-            className={styles.underline}
-            layoutId="underline"
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          />
+          Our <span className={styles.handUnderline}>Legacy</span>
         </motion.h2>
 
         <motion.p className={styles.text} variants={item}>
@@ -49,7 +44,7 @@ export default function HistoryPreview() {
 
         <motion.div variants={item}>
           <Link to="/history" className={styles.readMore}>
-            Read More
+            Read Our Story
           </Link>
         </motion.div>
       </div>

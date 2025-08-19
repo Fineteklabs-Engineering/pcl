@@ -1,12 +1,13 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "./Capabilities.module.css";
+import { Mail, FolderOpen, Package, FileText } from "lucide-react";
 
 const capabilitiesData = [
-  { number: 400000, label: "Envelopes" },
-  { number: 5000, label: "Office Files" },
-  { number: 2000, label: "Cartons of Computer Stationery" },
-  { number: 1200, label: "Reams of Ruled Paper" },
+  { number: 400000, label: "Envelopes", icon: Mail },
+  { number: 5000, label: "Office Files", icon: FolderOpen },
+  { number: 2000, label: "Cartons of Computer Stationery", icon: Package },
+  { number: 1200, label: "Reams of Ruled Paper", icon: FileText },
 ];
 
 export default function Capabilities() {
@@ -47,22 +48,20 @@ export default function Capabilities() {
   }, []);
 
   return (
-    <section
-      className={styles.capabilities}
-      style={{
-        backgroundImage:
-          "url('https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/capabilities.webp')",
-      }}
-    >
+    <section className={styles.capabilities}>
       <div className={styles.overlay}>
-        <h1 className={styles.title}>Our <span>Capabilities</span></h1>
+        <h1 className={styles.title}>Our <span className={styles.handUnderline}>Capabilities</span></h1>
         <div className={styles.container}>
-          {capabilitiesData.map((item, index) => (
-            <div key={index} className={styles.capability}>
-              <h2>{counts[index].toLocaleString()}+</h2>
-              <p>{item.label}</p>
-            </div>
-          ))}
+          {capabilitiesData.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div key={index} className={styles.capability}>
+                <IconComponent className={styles.icon} />
+                <h2>{counts[index].toLocaleString()}+</h2>
+                <p>{item.label}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

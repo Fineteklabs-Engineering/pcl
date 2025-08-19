@@ -1,9 +1,28 @@
 .membershipSection {
-  padding: 3rem 1rem;
-  font-family: 'Playfair Display', serif;
+  background-image: url('https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/footer-logo.png');
+  background-size: 80px 80px;
+  background-repeat: repeat;
+  background-position: 0 0;
+  min-height: 40vh;
+  position: relative;
+  font-family: var(--fontPrimary);
   color: #4a4a4a;
   text-align: center;
   box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .heading {
@@ -13,14 +32,13 @@
   color: #333;
   letter-spacing: 0.05em;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: var(--fontHeading);
 }
 
 
 .conveyorWrapper {
   overflow: hidden;
-  width: 630px; /* 3 × (150 + 60) */
+  width: min(630px, 90vw); 
   height: 100px;
   margin-left: auto;
   margin-right: auto;
@@ -62,25 +80,99 @@
 }
 
 
-@media (max-width: 600px) {
+/* Tablet */
+@media (max-width: 768px) {
+  .membershipSection {
+    min-height: 35vh;
+  }
+  
+  .overlay {
+    padding: 2.5rem 1rem;
+  }
+  
   .heading {
-    font-size: 1.6rem;
-      }
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
   
   .conveyorWrapper {
-    width: 405px; /* 3 × (120 + 30) */
+    width: min(500px, 85vw);
+    height: 90px;
+  }
+  
+  .conveyorBelt {
+    width: 1000px; /* 2 × 500px */
+  }
+  
+  .logo {
+    width: 130px;
+    height: 70px;
+    margin: 0 20px;
+  }
+}
+
+/* Mobile  */
+@media (max-width: 600px) {
+  .membershipSection {
+    min-height: 30vh;
+  }
+  
+  .overlay {
+    padding: 2rem 0.75rem;
+  }
+  
+  .heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .conveyorWrapper {
+    width: min(405px, 90vw);
     height: 80px;
   }
+  
   .conveyorBelt {
     width: 810px; /* 2 × 405px */
     animation: scrollLeftMobile 12s linear infinite;
   }
+  
   .logo {
     width: 120px;
     height: 60px;
     margin: 0 15px;
   }
+}
 
+/*smallerb phones */
+@media (max-width: 480px) {
+  .membershipSection {
+    min-height: 25vh;
+  }
+  
+  .overlay {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .heading {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .conveyorWrapper {
+    width: min(300px, 95vw);
+    height: 70px;
+  }
+  
+  .conveyorBelt {
+    width: 600px; /* 2 × 300px */
+    animation: scrollLeftSmall 12s linear infinite;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 50px;
+    margin: 0 10px;
+  }
 }
 
 @keyframes scrollLeftMobile {
@@ -89,6 +181,15 @@
   }
   100% {
     transform: translateX(-405px);
+  }
+}
+
+@keyframes scrollLeftSmall {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-300px);
   }
 }
 

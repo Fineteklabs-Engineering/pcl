@@ -1,317 +1,956 @@
+
 .timelineSection {
-  padding: 5rem 1rem;
-  background: linear-gradient(135deg, #fdfdfd 0%, #f8f9fa 100%);
-  font-family: "Playfair Display", serif;
-  color: #4a4a4a;
-  max-width: 1000px;
-  margin: 0 auto 6rem;
+  padding: 5rem 2rem;
+  background: #ffffff;
+  font-family: var(--fontPrimary);
+  color: #333;
+  max-width: 1400px;
+  margin: 0 auto;
   position: relative;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  min-height: 80vh;
 }
+
+
+.header {
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #333;
+  font-family: var(--fontHeading);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+
+
+.subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 400;
+  color: #666;
+  font-family: var(--fontPrimary);
+  margin-bottom: 1.5rem;
+}
+
+.instruction {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #888;
+  font-family: var(--fontPrimary);
+  font-weight: 300;
+}
+
+
+.handUnderline {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  color: #222222;
+}
+
+.handUnderline::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  bottom: -6rem; 
+  width: calc(100% + 4px);
+  height: 12rem; 
+  background: url("https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/underline.png") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.9;
+}
+
 
 .timelineContainer {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.timelineContainer::before {
-  content: "";
+
+.timelineLine {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #ff7f11 0%, #a8e600 100%);
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(255, 127, 17, 0.3);
-  z-index: 0;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: #ddd;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .milestoneItem {
   position: relative;
-  width: 45%;
-  padding: 1rem 2rem;
-  margin-bottom: 4rem;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-.left {
-  left: 0;
-  text-align: right;
-  margin-left: 0;
-}
-
-.right {
-  left: 55%;
-  text-align: left;
-}
-
-.content {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(255, 127, 17, 0.1), 0 3px 8px rgba(0, 0, 0, 0.05);
-  position: relative;
-  border: 1px solid rgba(255, 127, 17, 0.1);
-  transition: all 0.3s ease;
-}
-
-.content:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(255, 127, 17, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-.heading {
-  text-align: center;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  margin-bottom: 4rem;
-  color: #333;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 0.05em;
-}
-
-.year {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ff7f11;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.title {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-  color: #222;
-  line-height: 1.3;
-}
-
-.description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-.circle {
-  position: absolute;
-  top: 2rem;
-  width: 24px;
-  height: 24px;
-  background: linear-gradient(135deg, #a8e600, #ff7f11);
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 0 15px rgba(168, 230, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
+  cursor: pointer;
   transition: all 0.3s ease;
+  flex: 1;
+  min-width: 120px;
+  height: 8rem;
 }
 
-.milestoneItem:hover .circle {
-  transform: scale(1.2);
-  box-shadow: 0 0 20px rgba(168, 230, 0, 0.6), 0 6px 12px rgba(0, 0, 0, 0.15);
+
+
+
+.top {
+  align-items: center;
+  flex-direction: column;
 }
 
-.left .circle {
-  right: -60px;
+.bottom {
+  align-items: center;
+  flex-direction: column-reverse;
 }
 
-.right .circle {
-  left: -60px;
+.top .yearLabel {
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
-/* Large tablets */
-@media (max-width: 1024px) {
+.top .connector {
+  order: 1;
+}
+
+.top .iconContainer {
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.bottom .yearLabel {
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.bottom .connector {
+  order: 1;
+}
+
+.bottom .iconContainer {
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.iconContainer {
+  width: 4rem;
+  height: 4rem;
+  background: #ffffff;
+  border: 3px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.milestoneItem:hover .iconContainer {
+  border-color: var(--papconGreen);
+  background: var(--papconGreen);
+  transform: scale(1.1);
+}
+
+.milestoneItem:hover .icon {
+  color: #ffffff;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #333;
+  transition: all 0.3s ease;
+  stroke-width: 1.5;
+}
+
+.yearLabel {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  color: #333;
+  font-family: var(--fontHeading);
+  text-align: center;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.connector {
+  position: absolute;
+  width: 2px;
+  height: 8rem;
+  background: #ddd;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+@media (max-width: 1024px) and (min-width: 769px) {
   .timelineSection {
-    padding: 4rem 1rem;
-    max-width: 95%;
-    margin: 0 auto 5rem;
-  }
-  
-  .heading {
-    margin-bottom: 3rem;
-  }
-  
-  .milestoneItem {
-    width: 48%;
-    padding: 1rem 1.5rem;
-  }
-  
-  .content {
-    padding: 1.5rem;
-  }
-  
-  .title {
-    font-size: 1.4rem;
-  }
-  
-  .description {
-    font-size: 0.95rem;
-  }
-}
-
-/* Small tablets */
-@media (max-width: 900px) {
-  .timelineSection {
-    padding: 3rem 1rem;
-    border-radius: 12px;
+    padding: 4rem 1.5rem;
   }
   
   .timelineContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+    max-width: 800px;
+  }
+  
+  .timelineLine {
+    display: none;
+  }
+  
+  .milestoneItem {
+    height: auto;
+    position: relative;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(132, 204, 22, 0.05), rgba(132, 204, 22, 0.1));
+    border-radius: 16px;
+    border: 1px solid rgba(132, 204, 22, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .milestoneItem .cardContent {
+    display: block !important;
+    margin-top: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.95rem;
+  }
+  
+  .milestoneItem:nth-child(odd) {
+    transform: translateX(-1rem);
+  }
+  
+  .milestoneItem:nth-child(even) {
+    transform: translateX(1rem);
+  }
+  
+  .milestoneItem:hover {
+    transform: translateX(0) scale(1.02);
+    box-shadow: 0 8px 32px rgba(132, 204, 22, 0.15);
+  }
+  
+  .connector {
+    display: none;
+  }
+  
+  .top .yearLabel,
+  .bottom .yearLabel {
+    position: static;
+    transform: none;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--papconGreen);
+  }
+  
+  .top .iconContainer,
+  .bottom .iconContainer {
+    position: static;
+    transform: none;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+  }
+  
+  .top,
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  .detailsSection {
+    display: none;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileTabletOnly {
+    display: inline;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .timelineSection {
+    padding: 3rem 1rem;
+    overflow: hidden;
+  }
+  
+  .header {
+    margin-bottom: 3rem;
+  }
+  
+  .timelineContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     padding: 2rem 0;
   }
   
-  .timelineContainer::before {
-    left: 30px;
+  
+  .timelineLine {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 3px;
-  }
-
-  .milestoneItem {
-    width: 100%;
-    padding-left: 70px;
-    text-align: left;
-    margin-bottom: 3rem;
-  }
-
-  .left,
-  .right {
-    left: 0;
-  }
-
-  .circle {
-    top: 1.5rem;
-    left: 18px !important;
-    right: auto !important;
-    width: 20px;
-    height: 20px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      transparent 0%, 
+      var(--papconGreen) 10%, 
+      var(--papconGreen) 90%, 
+      transparent 100%);
+    border-radius: 3px;
   }
   
-  .content {
+  .milestoneItem {
+    position: relative;
+    width: 280px;
+    height: auto;
     padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(132, 204, 22, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .milestoneItem .cardContent {
+    display: block !important;
+    margin-top: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+  
+  
+  .milestoneItem:nth-child(odd) {
+    align-self: flex-start;
+    margin-left: 1rem;
+    transform: rotate(-2deg);
+  }
+  
+  .milestoneItem:nth-child(even) {
+    align-self: flex-end;
+    margin-right: 1rem;
+    transform: rotate(2deg);
+  }
+  
+  .milestoneItem:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 16px 48px rgba(132, 204, 22, 0.2);
+    border-color: var(--papconGreen);
+  }
+  
+ 
+  .milestoneItem::before {
+    display: none;
+  }
+  
+  .milestoneItem:nth-child(odd)::before {
+    display: none;
+  }
+  
+  .milestoneItem:nth-child(even)::before {
+    display: none;
+  }
+  
+  .connector {
+    display: none;
+  }
+  
+  .top,
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .top .yearLabel,
+  .bottom .yearLabel {
+    position: static;
+    transform: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--papconGreen);
+    margin: 0;
+  }
+  
+  .top .iconContainer,
+  .bottom .iconContainer {
+    position: static;
+    transform: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0;
+    background: linear-gradient(135deg, var(--papconGreen), #a3d63a);
+    border: 3px solid white;
+    box-shadow: 0 4px 16px rgba(132, 204, 22, 0.3);
+  }
+  
+  .icon {
+    color: white;
+    font-size: 1.4rem;
+  }
+  
+  
+  .detailsSection {
+    display: none;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileTabletOnly {
+    display: inline;
   }
 }
 
-/* Mobile phones */
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
   .timelineSection {
-    padding: 2.5rem 0.75rem;
-    margin: 0 auto 4rem;
+    padding: 2rem 0.75rem;
   }
   
-  .heading {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: 2.5rem;
-  }
-  
-  .timelineContainer::before {
-    left: 25px;
-  }
-
   .milestoneItem {
-    padding-left: 60px;
-    margin-bottom: 2.5rem;
-  }
-
-  .circle {
-    top: 1.5rem;
-    left: 16px !important;
-    width: 18px;
-    height: 18px;
-    border-width: 3px;
-  }
-  
-  .content {
+    width: 260px;
     padding: 1.25rem;
   }
   
-  .year {
+  .top .iconContainer,
+  .bottom .iconContainer {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+  }
+  
+  .top .yearLabel,
+  .bottom .yearLabel {
+    font-size: 1.1rem;
+  }
+  
+  .milestoneItem:nth-child(odd) {
+    margin-left: 0.5rem;
+  }
+  
+  .milestoneItem:nth-child(even) {
+    margin-right: 0.5rem;
+  }
+
+  .cardTitle {
     font-size: 1rem;
   }
-  
-  .title {
-    font-size: 1.3rem;
-  }
-  
-  .description {
-    font-size: 0.9rem;
+
+  .cardDescription {
+    font-size: 0.85rem;
   }
 }
 
-/* Small mobile phones */
-@media (max-width: 600px) {
+
+@media (orientation: landscape) and (max-width: 1024px) and (min-width: 568px) {
   .timelineSection {
-    padding: 2rem 0.5rem;
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
-  .timelineContainer::before {
-    left: 20px;
-  }
-
-  .milestoneItem {
-    padding-left: 50px;
+  .header {
     margin-bottom: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .timelineContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .timelineContainer::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .timelineContainer::-webkit-scrollbar-track {
+    background: rgba(132, 204, 22, 0.1);
+    border-radius: 3px;
+  }
+  
+  .timelineContainer::-webkit-scrollbar-thumb {
+    background: var(--papconGreen);
+    border-radius: 3px;
+  }
+  
+  .timelineLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, 
+      transparent 0%, 
+      var(--papconGreen) 10%, 
+      var(--papconGreen) 90%, 
+      transparent 100%);
+  }
+  
+  .milestoneItem {
+    flex-shrink: 0;
+    width: 200px;
+    height: 300px;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    border: 2px solid rgba(132, 204, 22, 0.3);
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .milestoneItem:hover {
+    transform: scale(1.05);
+    border-color: var(--papconGreen);
+    box-shadow: 0 8px 32px rgba(132, 204, 22, 0.2);
+  }
+  
+  .milestoneItem::before {
+    display: none;
+  }
+  
+  .connector {
+    display: none;
+  }
+  
+  .top,
+  .bottom {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  .top .yearLabel,
+  .bottom .yearLabel {
+    position: static;
+    transform: none;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--papconGreen);
+    margin: 0;
+  }
+  
+  .top .iconContainer,
+  .bottom .iconContainer {
+    position: static;
+    transform: none;
+    width: 4rem;
+    height: 4rem;
+    margin: 0;
+  }
+  
+  .detailsSection {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    z-index: 10;
+    margin: 0;
   }
 
-  .circle {
-    left: 12px !important;
-    width: 16px;
-    height: 16px;
+  .milestoneItem .cardContent {
+    display: block !important;
+    margin-top: 0.75rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.25rem 0;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileTabletOnly {
+    display: inline;
+  }
+}
+
+/* Mobile landscape */
+@media (orientation: landscape) and (max-width: 768px) {
+  .timelineSection {
+    padding: 1.5rem 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
-  .content {
+  .header {
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .instruction {
+    font-size: 0.9rem;
+  }
+  
+  .timelineContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .timelineContainer::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .timelineContainer::-webkit-scrollbar-track {
+    background: rgba(132, 204, 22, 0.1);
+    border-radius: 2px;
+  }
+  
+  .timelineContainer::-webkit-scrollbar-thumb {
+    background: var(--papconGreen);
+    border-radius: 2px;
+  }
+  
+  .timelineLine {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, 
+      transparent 0%, 
+      var(--papconGreen) 10%, 
+      var(--papconGreen) 90%, 
+      transparent 100%);
+  }
+  
+  .milestoneItem {
+    flex-shrink: 0;
+    width: 180px;
+    height: 250px;
     padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
+    border: 2px solid rgba(132, 204, 22, 0.3);
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
   }
   
-  .year {
+  .milestoneItem:hover {
+    transform: scale(1.03);
+    border-color: var(--papconGreen);
+    box-shadow: 0 6px 24px rgba(132, 204, 22, 0.15);
+  }
+  
+  .milestoneItem::before {
+    display: none;
+  }
+  
+  .connector {
+    display: none;
+  }
+  
+  .top,
+  .bottom {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  .top .yearLabel,
+  .bottom .yearLabel {
+    position: static;
+    transform: none;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--papconGreen);
+    margin: 0;
+  }
+  
+  .top .iconContainer,
+  .bottom .iconContainer {
+    position: static;
+    transform: none;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+  }
+  
+  .milestoneItem .cardContent {
+    display: block !important;
+    margin-top: 0.5rem;
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    line-height: 1.2;
+  }
+
+  .cardDescription {
+    font-size: 0.75rem;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileTabletOnly {
+    display: inline;
+  }
+
+  .detailsSection {
+    display: none;
+  }
+}
+
+/*  */
+@media (orientation: landscape) and (max-height: 500px) {
+  .timelineSection {
+    padding: 1rem 0.75rem;
+    height: 100vh;
+  }
+  
+  .header {
+    margin-bottom: 1rem;
+  }
+  
+  .mainTitle {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .subtitle {
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
   }
   
-  .title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  .instruction {
+    font-size: 0.8rem;
   }
-  
-  .description {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 400px) {
-  .timelineSection {
-    padding: 1.5rem 0.5rem;
-  }
-  
-  .heading {
-    font-size: clamp(1.5rem, 6vw, 2rem);
-    margin-bottom: 2rem;
-  }
-  
-
   
   .milestoneItem {
-    padding-left: 45px;
-    margin-bottom: 1.5rem;
-  }
-  
-  .content {
+    width: 160px;
+    height: 200px;
     padding: 0.75rem;
+    gap: 0.5rem;
   }
   
-  .year {
+  .top .yearLabel,
+  .bottom .yearLabel {
+    font-size: 1rem;
+  }
+  
+  .top .iconContainer,
+  .bottom .iconContainer {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .cardTitle {
     font-size: 0.8rem;
+    margin: 0.2rem 0;
   }
-  
-  .title {
-    font-size: 1.1rem;
-  }
-  
-  .description {
-    font-size: 0.8rem;
+
+  .cardDescription {
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 }
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.milestoneItem {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+
+.hovered .iconContainer {
+  border-color: var(--papconGreen);
+  background: var(--papconGreen);
+  transform: scale(1.15);
+}
+
+.hovered .icon {
+  color: #ffffff;
+}
+
+.hovered .yearLabel {
+  color: var(--papconGreen);
+  font-weight: 800;
+}
+
+
+.detailsSection {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 2px solid rgba(132, 204, 22, 0.4);
+  max-width: 700px;
+  width: 85%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.detailsContent {
+  text-align: center;
+  position: relative;
+}
+
+.detailsTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #333;
+  font-family: var(--fontHeading);
+  margin-bottom: 1rem;
+}
+
+.detailsDescription {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #666;
+  font-family: var(--fontPrimary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Card contenhidden by default on desktop */
+.cardContent {
+  display: none;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  font-family: var(--fontHeading);
+  margin: 0.75rem 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: #666;
+  font-family: var(--fontPrimary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+.desktopOnly {
+  display: inline;
+}
+
+.mobileTabletOnly {
+  display: none;
+}
+

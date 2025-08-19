@@ -1,79 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Hero.module.css";
-import { motion } from "framer-motion";
 
-const container = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.3,
-      ease: "easeOut",
-      duration: 0.8,
-    },
-  },
-};
+const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-export default function Hero() {
-  const scrollToHistoryPreview = () => {
-    const element = document.getElementById('history-preview');
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setImageLoaded(true);
+    img.src = "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herohome.png";
+  }, []);
 
   return (
-    <section className={styles.hero}>
-      <motion.video
-        className={styles.videoBg}
-        src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/hero-video.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.05 }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-      />
+    <section className={styles.hero} aria-label="Hero section">
+      <div className={styles.left}>
+        <span className={styles.tagline} aria-label="Company tagline">Your trusted partner</span>
+        <h1 className={styles.heading}>
+          A Leader in the <span className={styles.handUnderline}>manufacture</span> of paper products in East Africa
+        </h1>
 
-      <div className={styles.overlay}></div>
+        <p className={styles.description}>
+          Learn our story from our establishment in 1971 in Mombasa, Kenya, over the decades to become a household name not only in Kenya, but the East African Region.
+        </p>
+        
+        <button 
+          className={styles.cta}
+          aria-label="Get started with Papcon Kenya"
+          type="button"
+        >
+          Get Started
+        </button>
+        
+        <div className={styles.stars} role="img" aria-label="4.5 out of 5 stars rating">
+          <span className={styles.star} aria-hidden="true">★</span>
+          <span className={styles.star} aria-hidden="true">★</span>
+          <span className={styles.star} aria-hidden="true">★</span>
+          <span className={styles.star} aria-hidden="true">★</span>
+          <span className={styles.halfStar} aria-hidden="true">★</span>
+        </div>
+        <p className={styles.ratingText}>Rated 4.5/5 by 2,000+ happy customers</p>
+      </div>
 
-      <motion.div
-        className={styles.heroContent}
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        whileHover={{ y: -5 }}
-        transition={{ type: "spring", stiffness: 100 }}
-      >
-        <motion.h1 className={styles.heading} variants={item}>
-          A Leader in the Manufacturing of
-          <span> Paper Products in East Africa</span>
-        </motion.h1>
-        <motion.p className={styles.subheading} variants={item}>
-          Learn our story from our establishment in 1971 in Mombasa, Kenya,
-          over the decades to become a household name not only in Kenya, but
-          the East African Region.
-        </motion.p>
-        <motion.button
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className={styles.ctaButton}
-  onClick={scrollToHistoryPreview}
->
-  Learn More
-</motion.button>
-
-      </motion.div>
+      <div className={styles.right}>
+        <img
+          src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herohome.png"
+          alt="Papcon Kenya manufacturing facility and paper products showcase"
+          className={styles.heroImage}
+          loading="eager"
+          style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity 0.3s ease' }}
+          onLoad={() => setImageLoaded(true)}
+        />
+        {!imageLoaded && (
+          <div className={styles.imagePlaceholder} aria-hidden="true">
+            Loading...
+          </div>
+        )}
+      </div>
     </section>
   );
-}
+};
+
+export default Hero;

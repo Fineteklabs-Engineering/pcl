@@ -1,9 +1,38 @@
 :root {
+
   --papconOrange: #FF7F11;
   --papconGreen: #A8E600;
-  --fontHeading: 'Playfair Display', serif;
-  --fontBody: 'Playfair Display', serif;
+  --papconBlack: #222222;
+  
+  
+  --neutral-white: #ffffff;
+  --neutral-light: #f8f9fa;
+  --neutral-gray: #666666;
+  --neutral-dark: #333333;
+  
  
+  --fontPrimary: 'Questrial', sans-serif; /*for ty bodya dn ui*/
+  --fontHeading: 'PT Sans', sans-serif; /*for the titles*/
+  --fontSecondary: 'Open Sans', sans-serif; /* for the logo and the descriptions*/
+  
+ 
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  
+  
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+  --radius-pill: 50px;
 }
 
 * {
@@ -16,7 +45,7 @@ html {
 }
 
 body {
-  font-family: var(--fontBody);
+  font-family: var(--fontPrimary);
   background: #fff;
   color: #222;
   line-height: 1.6;

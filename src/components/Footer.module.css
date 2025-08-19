@@ -2,7 +2,7 @@
   background-color: #fff;
   color: black;
   padding: 3rem 1rem 1rem;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--fontPrimary);
   margin-top: 10%;
 }
 
@@ -22,7 +22,7 @@
 .logo {
   width: 160px;
   margin-bottom: 1rem;
-   /* filter: brightness(0) saturate(100%) invert(54%) sepia(87%) saturate(748%) hue-rotate(0deg) brightness(101%) contrast(101%); */
+  
 }
 
 .footerLeft p {
@@ -33,6 +33,7 @@
 .footerCenter h4, .footerRight h4 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  font-family: var(--fontHeading);
 }
 
 .footerCenter ul {
@@ -195,7 +196,7 @@
   }
 }
 
-/* Small mobile phones */
+
 @media (max-width: 600px) {
   .footer {
     padding: 1.5rem 0.75rem 1rem;

@@ -45,7 +45,7 @@ export default function MiniGallery() {
 
  
   const getInitialAnimation = (index) => {
-    // Simple staggered animation that works well for both 2 and 3 column layouts
+   
     const animations = [
       { opacity: 0, x: -30, y: 20 },
       { opacity: 0, x: 30, y: 20 },
@@ -72,7 +72,7 @@ export default function MiniGallery() {
   viewport={{ once: true }}
   transition={{ duration: 0.6, delay: 0.2 }}
 >
-  <span className={styles.headingSpan}>Our</span> Gallery
+  Our <span className={styles.handUnderline}>Gallery</span>
 </motion.h2>
 
       <motion.div 

@@ -1,24 +1,50 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "../styles/global.css";
 
-
-
-
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  // Track locally-active nav for static items that don't navigate
+  const [staticActive, setStaticActive] = useState("");
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/history", label: "History" },
-    // { path: "/facilities", label: "Facilities" },
-    // { path: "/core-businesses", label: "Core Businesses" },
+    { path: "/history", label: "About Us" },
+    { path: "/", label: "Products" },   
+    { path: "/", label: "Facilities" }, 
+    { path: "/", label: "Clients" },    
     { path: "/gallery", label: "Gallery" },
     { path: "/contact", label: "Contact" },
   ];
+
+  const isHomeExact = () => window.location.pathname === "/" && !window.location.hash;
+
+  const isStaticLink = (label, path) => label !== "Home" && path === "/";
+
+  const computeClassName = (label, path, isActive) => {
+    
+    if (staticActive) {
+      if (isStaticLink(label, path)) {
+        return staticActive === label ? `${styles.active} ${styles.navLink}` : styles.navLink;
+      }
+      return styles.navLink;
+    }
+
+    if (isStaticLink(label, path)) return styles.navLink;
+    const exactActive = path === "/" ? isHomeExact() : isActive;
+    return exactActive ? `${styles.active} ${styles.navLink}` : styles.navLink;
+  };
+
+  const handleClick = (e, link) => {
+    if (isStaticLink(link.label, link.path)) {
+      e.preventDefault();
+      setStaticActive(link.label);
+    } else {
+      setStaticActive("");
+    }
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -35,16 +61,15 @@ export default function Navbar() {
         <ul className={styles.navLinks}>
           {navLinks.map((link, i) => (
             <motion.li
-              key={link.path}
+              key={link.label + i}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
               <NavLink
                 to={link.path}
-                className={({ isActive }) =>
-                  isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
-                }
+                onClick={(e) => handleClick(e, link)}
+                className={({ isActive }) => computeClassName(link.label, link.path, isActive)}
               >
                 {link.label}
               </NavLink>
@@ -72,9 +97,8 @@ export default function Navbar() {
             exit={{ x: "100%" }}
             transition={{ duration: 0.3 }}
           >
-            {/* Close Button */}
             <div className={styles.closeButton}>
-              <button 
+              <button
                 className={styles.closeIcon}
                 onClick={() => setMenuOpen(false)}
                 aria-label="Close menu"
@@ -83,15 +107,34 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Navigation Links */}
             {navLinks.map((link, i) => (
               <NavLink
-                key={link.path}
+                key={link.label + i}
                 to={link.path}
-                className={({ isActive }) =>
-                  isActive ? `${styles.active} ${styles.mobileLink}` : styles.mobileLink
-                }
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => {
+                  if (isStaticLink(link.label, link.path)) {
+                    e.preventDefault();
+                    setStaticActive(link.label);
+                  } else {
+                    setStaticActive("");
+                  }
+                  setMenuOpen(false);
+                }}
+                className={({ isActive }) => {
+                  // Mirror desktop: if any static linl, is active, suppress others
+                  if (staticActive) {
+                    if (isStaticLink(link.label, link.path)) {
+                      return staticActive === link.label
+                        ? `${styles.active} ${styles.mobileLink}`
+                        : styles.mobileLink;
+                    }
+                    return styles.mobileLink;
+                  }
+                  if (isStaticLink(link.label, link.path)) return styles.mobileLink;
+                  return (link.path === "/" ? isHomeExact() : isActive)
+                    ? `${styles.active} ${styles.mobileLink}`
+                    : styles.mobileLink;
+                }}
               >
                 {link.label}
               </NavLink>

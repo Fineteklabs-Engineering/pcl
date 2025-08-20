@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Contact.module.css";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import SEO from "../components/SEO";
 
 export default function Contact() {
@@ -35,57 +35,72 @@ export default function Contact() {
         description="Ready to transform your vision into reality? Contact Paper Converters(K) Ltd today. Our team of experts is here to listen, collaborate, and create something extraordinary together."
         keywords="contact Paper Converters, contact Paper Converters K Ltd, contact Papcon Kenya, paper manufacturer contact, Mombasa contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact, paper converter contact"
         url="https://papconkenya.magical.africa/contact"
-        image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/location.webp"
+        image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/contact.jpg"
         structuredData={structuredData}
       />
-   
 
-<div className={styles.headerWrapper}>
-  <motion.div
-    className={styles.contactHeader}
-    initial={{ opacity: 0, y: -30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  >
-    <div className={styles.headerContent}>
-      <h1>Let's Connect</h1>
-      <p>Ready to transform your vision into reality? We're here to listen, collaborate, and create something extraordinary together. Reach out today.</p>
-    </div>
-  </motion.div>
-</div>
-    
-      <div className={styles.contactContent}>
-      
+      <div className={styles.heroSection}>
+        <div className={styles.heroOverlay}>
+          <div className={styles.heroContent}>
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Contact Us
+            </motion.h1>
+            <motion.div
+              className={styles.breadcrumb}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* <span>Home</span> / <span>Contact Us</span> */}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.contactContainer}>
         <motion.div
           className={styles.contactForm}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <form className={styles.formCard}>
-            <div className={styles.formGroup}>
-              <input type="text" id="name" required />
-              <label htmlFor="name">Full Name</label>
-              <div className={styles.underline}></div>
+          <form className={styles.form}>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <input type="text" placeholder="Your Name" required />
+              </div>
             </div>
-            <div className={styles.formGroup}>
-              <input type="email" id="email" required />
-              <label htmlFor="email">Email Address</label>
-              <div className={styles.underline}></div>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <input type="email" placeholder="Your Email" required />
+              </div>
             </div>
-            <div className={styles.formGroup}>
-              <textarea id="message" rows="3" required></textarea>
-              <label htmlFor="message">Your Message</label>
-              <div className={styles.underline}></div>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <input type="text" placeholder="Subject" required />
+              </div>
             </div>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <textarea 
+                  placeholder="Your Message" 
+                  rows="5" 
+                  required
+                ></textarea>
+              </div>
+            </div>
+            
             <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className={styles.submitBtn}
               type="submit"
+              className={styles.submitBtn}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <FaPaperPlane className={styles.sendIcon} />
-              Send Message
+              SEND MESSAGE
             </motion.button>
           </form>
         </motion.div>
@@ -96,41 +111,74 @@ export default function Contact() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.infoCard}>
-            <h2>Contact Information</h2>
-            <p className={styles.infoDescription}>
-              Connect with our team of experts who are passionate about delivering excellence. We're committed to bringing your ideas to life with precision and care.
-            </p>
-            
-            <ul className={styles.infoList}>
-              <motion.li whileHover={{ x: 5 }}>
-                <div className={styles.infoIcon}>
-                  <FaMapMarkerAlt />
-                </div>
-                <div>
-                  <h3>Location</h3>
-                  <p>Industrial Area on Olesoi Rd, Kenya</p>
-                </div>
-              </motion.li>
-              <motion.li whileHover={{ x: 5 }}>
-                <div className={styles.infoIcon}>
+          <h2>Get In Touch</h2>
+          <p className={styles.formDescription}>
+          Connect with our team of experts who are passionate about delivering excellence. We're committed to bringing your ideas to life with precision.
+          </p>
+          
+          <div className={styles.contactDetails}>
+          
+            <div className={styles.contactRow}>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
                   <FaPhoneAlt />
                 </div>
-                <div>
-                  <h3>Phone</h3>
-                  <p>+254 700 000 000</p>
+                <div className={styles.contactText}>
+                  <h3>Call Us</h3>
+                  <p>+254 202 695 636</p>
                 </div>
-              </motion.li>
-              <motion.li whileHover={{ x: 5 }}>
-                <div className={styles.infoIcon}>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
                   <FaEnvelope />
                 </div>
-                <div>
-                  <h3>Email</h3>
+                <div className={styles.contactText}>
+                  <h3>Email Us</h3>
                   <p>info@papconkenya.com</p>
                 </div>
-              </motion.li>
-            </ul>
+              </div>
+            </div>
+
+            <div className={styles.contactRow}>
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
+                  <FaGlobe />
+                </div>
+                <div className={styles.contactText}>
+                  <h3>Website</h3>
+                  <p>papconkenya.magical.africa</p>
+                </div>
+              </div>
+
+              <div className={styles.contactItem}>
+                <div className={styles.contactIcon}>
+                  <FaMapMarkerAlt />
+                </div>
+                <div className={styles.contactText}>
+                  <h3>Address</h3>
+                  <p>Nairobi, Industrial Area, off Lunga Lunga Rd</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.socialSection}>
+            <h3>Follow Us On</h3>
+            <div className={styles.socialIcons}>
+              <a href="#" className={styles.socialIcon} aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="#" className={styles.socialIcon} aria-label="Twitter">
+                <FaTwitter />
+              </a>
+              <a href="#" className={styles.socialIcon} aria-label="LinkedIn">
+                <FaLinkedinIn />
+              </a>
+              <a href="#" className={styles.socialIcon} aria-label="Instagram">
+                <FaInstagram />
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

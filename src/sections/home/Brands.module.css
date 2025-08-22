@@ -1,0 +1,506 @@
+.section { 
+  padding: var(--space-3xl) var(--space-lg); 
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--space-md);
+  overflow-x: hidden; 
+}
+
+.heading { 
+  font-family: var(--fontHeading); 
+  color: var(--papconBlack); 
+  text-align: center; 
+  margin-bottom: var(--space-2xl);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.handUnderline {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  color: var(--papconBlack);
+}
+
+.handUnderline::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  bottom: -6rem; 
+  width: calc(100% + 4px);
+  height: 12rem; 
+  background: url("https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/underline.png") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+
+
+.brandBeltContainer {
+  width: calc(3 * (280px + 6rem)); 
+  overflow: hidden; 
+  margin: 0 auto;
+  position: relative;
+  padding: 4rem 0 8rem 0; 
+  --logo-width: 280px;
+  --logo-gap: 6rem;
+}
+
+.brandBelt {
+  display: flex;
+  gap: 6rem; 
+  width: max-content;
+  animation: scrollBelt 25s linear infinite;
+}
+
+.brandBelt.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scrollBelt {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (var(--logo-width, 280px) + var(--logo-gap, 6rem)) * 3)); 
+  }
+}
+
+
+
+.brandItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 0 0 auto;
+  width: 280px; /* increased width */
+  max-width: 280px;
+}
+
+.logoContainer {
+  background: white;
+  border-radius: 20px; 
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandItem:hover .logoContainer {
+  transform: translateY(-12px); 
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  border-color: var(--papconGreen);
+}
+
+.logo {
+  max-height: 100px; 
+  max-width: 200px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: all 0.3s ease;
+}
+
+.brandItem:hover .logo {
+  filter: grayscale(0%);
+  transform: scale(1.08); 
+}
+
+
+.hoverContent {
+  position: fixed;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  z-index: 9999;
+  border: 1px solid #f0f0f0;
+  animation: fadeIn 0.3s ease;
+}
+
+
+.hoverContent::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.brandName {
+  font-family: var(--fontHeading);
+  font-size: 1.4rem; 
+  font-weight: 700;
+  color: var(--papconBlack);
+  margin: 0 0 0.75rem 0;
+}
+
+.category {
+  font-family: var(--fontSecondary);
+  font-size: 0.95rem; 
+  color: var(--papconGreen);
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.description {
+  font-family: var(--fontPrimary);
+  font-size: 1rem; 
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+@media (min-width: 1400px) {
+  .brandBeltContainer {
+    width: calc(3 * (320px + 8rem));
+    --logo-width: 320px;
+    --logo-gap: 8rem;
+  }
+  
+  .brandItem {
+    width: 320px;
+    max-width: 320px;
+  }
+  
+  .logo {
+    max-height: 120px;
+    max-width: 240px;
+  }
+  
+  .hoverContent {
+    width: 360px;
+    padding: 2.5rem;
+  }
+  
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .brandBeltContainer {
+    width: calc(3 * (280px + 6rem));
+    --logo-width: 280px;
+    --logo-gap: 6rem;
+  }
+}
+
+/* Tablet Landscape (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .brandBeltContainer {
+    width: calc(3 * (240px + 5rem));
+    --logo-width: 240px;
+    --logo-gap: 5rem;
+  }
+  
+  .brandItem {
+    width: 240px;
+    max-width: 240px;
+  }
+  
+  .logo {
+    max-height: 90px;
+    max-width: 180px;
+  }
+  
+  .hoverContent {
+    width: 300px;
+    padding: 1.75rem;
+  }
+  
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .section {
+    padding: var(--space-2xl) var(--space-md);
+    min-height: auto;
+  }
+  
+  .brandBeltContainer {
+    width: calc(3 * (200px + 4rem));
+    padding: 3rem 0 6rem 0;
+    --logo-width: 200px;
+    --logo-gap: 4rem;
+  }
+  
+  .brandBelt {
+    gap: 4rem;
+  }
+  
+  .brandItem {
+    width: 200px;
+    max-width: 200px;
+  }
+  
+  .logoContainer {
+    padding: 2rem;
+    border-radius: 16px;
+  }
+  
+  .logo {
+    max-height: 80px;
+    max-width: 160px;
+  }
+  
+  .hoverContent {
+    width: 280px;
+    padding: 1.5rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .brandName {
+    font-size: 1.25rem;
+  }
+  
+  .category {
+    font-size: 0.9rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+
+@media (max-width: 767px) and (min-width: 568px) and (orientation: landscape) {
+  .section {
+    padding: var(--space-xl) var(--space-sm);
+    min-height: auto;
+  }
+  
+  .brandBeltContainer {
+    width: calc(3 * (160px + 3rem));
+    padding: 2rem 0 4rem 0;
+    --logo-width: 160px;
+    --logo-gap: 3rem;
+  }
+  
+  .brandBelt {
+    gap: 3rem;
+  }
+  
+  .brandItem {
+    width: 160px;
+    max-width: 160px;
+  }
+  
+  .logoContainer {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .logo {
+    max-height: 60px;
+    max-width: 120px;
+  }
+  
+  .hoverContent {
+    width: 240px;
+    padding: 1.25rem;
+  }
+  
+  .heading {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .brandName {
+    font-size: 1.1rem;
+  }
+  
+  .category {
+    font-size: 0.85rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 567px) {
+  .section {
+    padding: var(--space-lg) var(--space-sm);
+    min-height: auto;
+    overflow-x: hidden; 
+  }
+  
+  .container {
+    padding: 0 var(--space-sm);
+    overflow-x: hidden; 
+  }
+  
+  .brandBeltContainer {
+    width: calc(3 * (120px + 1.5rem)); 
+    padding: 2rem 0 4rem 0;
+    --logo-width: 120px;
+    --logo-gap: 1.5rem;
+  }
+  
+  .brandBelt {
+    gap: 2rem;
+  }
+  
+  .brandItem {
+    width: 120px;
+    max-width: 120px;
+  }
+  
+  .logoContainer {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  
+  .logo {
+    max-height: 50px;
+    max-width: 100px;
+  }
+  
+  .hoverContent {
+    width: 220px;
+    padding: 1rem;
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .brandName {
+    font-size: 1rem;
+  }
+  
+  .category {
+    font-size: 0.8rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .brandBeltContainer {
+    width: calc(3 * (120px + 1.5rem));
+    --logo-width: 120px;
+    --logo-gap: 1.5rem;
+  }
+  
+  .brandItem {
+    width: 120px;
+    max-width: 120px;
+  }
+  
+  .logoContainer {
+    padding: 1rem;
+  }
+  
+  .logo {
+    max-height: 40px;
+    max-width: 80px;
+  }
+  
+  .hoverContent {
+    width: 200px;
+    padding: 0.875rem;
+  }
+  
+  .heading {
+    font-size: 1.25rem;
+  }
+}
+
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .section {
+    padding: var(--space-md) var(--space-sm);
+    min-height: auto;
+  }
+  
+  .brandBeltContainer {
+    padding: 1.5rem 0 3rem 0;
+  }
+  
+  .heading {
+    margin-bottom: var(--space-md);
+  }
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .brandBelt {
+    animation: none;
+  }
+  
+  .brandItem:hover .logoContainer {
+    transform: none;
+  }
+  
+  .brandItem:hover .logo {
+    transform: none;
+  }
+  
+  .hoverContent {
+    animation: none;
+  }
+}
+  

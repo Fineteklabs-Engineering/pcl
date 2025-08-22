@@ -11,10 +11,10 @@ export default function Navbar() {
 
   const navLinks = [
     { path: "/", label: "Home" },
-    { path: "/history", label: "About Us" },
-    { path: "/", label: "Products" },   
-    { path: "/", label: "Facilities" }, 
-    { path: "/", label: "Clients" },    
+    { path: "/history", label: "Our Story" },
+    { path: "/products", label: "Products" },
+    { path: "/industries", label: "Industries" },
+    { path: "/label-craft", label: "Label Craft" },
     { path: "/gallery", label: "Gallery" },
     { path: "/contact", label: "Contact" },
   ];

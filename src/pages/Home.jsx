@@ -3,10 +3,14 @@ import SEO from "../components/SEO";
 import Hero from "../sections/home/Hero";
 import HistoryPreview from "../sections/home/HistoryPreview";
 import CoreBusiness from "../sections/home/CoreBusiness";
-import MiniGallery from "../sections/home/MiniGallery";
+// import MiniGallery from "../sections/home/MiniGallery";
 import Capabilities from "../sections/home/Capabilities";
 import FacilitiesPreview from "../sections/home/FacilitiesPreview";
 import ContactSnippet from "../sections/home/ContactSnippet";
+import FeaturedProducts from "../sections/home/FeaturedProducts";
+import IndustriesSnippet from "../sections/home/IndustriesSnippet";
+import Brands from "../sections/home/Brands";
+// import TrustSignals from "../sections/home/TrustSignals";
 
 export default function Home() {
   const structuredData = {
@@ -21,9 +25,9 @@ export default function Home() {
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Industrial Area on Olesoi Rd",
-      "addressLocality": "Mombasa",
+      "addressLocality": "Nairobi",
       "addressCountry": "Kenya",
-      "addressRegion": "Coast"
+      "addressRegion": "Nairobi"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -32,6 +36,7 @@ export default function Home() {
       "email": "info@papconkenya.com"
     },
     "sameAs": [
+      // Use flow layout (no transforms) for tablets and down, or sma
       "https://facebook.com/papconkenya",
       "https://twitter.com/papconkenya",
       "https://linkedin.com/company/papconkenya"
@@ -41,9 +46,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Paper Converters(K) Ltd - Leading Paper Products Manufacturer in East Africa Since 1971"
-        description="Discover Paper Converters(K) Ltd's excellence in paper manufacturing since 1971. Based in Mombasa, we deliver premium paper products, world-class facilities, and innovative solutions across East Africa."
-        keywords="Paper Converters, Paper Converters K Ltd, Paper Converters Kenya, Papcon Kenya, paper manufacturer, East Africa manufacturing, quality paper products, Mombasa industry, paper supplier Kenya, manufacturing excellence, industrial paper, paper production facilities, paper converter, paper conversion"
+        title="Paper Converters (K) Ltd | Kenya’s Premier Manufacturer of Envelopes, Stationery & Labels | Established in 1971 • Nairobi, Kenya"
+        description="Paper Converters (K) Ltd is a trusted Kenyan manufacturer of computer stationery, thermal rolls, envelopes, office files, and self-adhesive labels. Serving East Africa’s retail, industrial, and FMCG sectors since 1971. Reliable supply, custom solutions, and fast delivery you can count on."
+        keywords="Paper Converters, Paper Converters K Ltd, Paper Converters Kenya, Papcon Kenya, paper manufacturer, East Africa manufacturing, quality paper products, Nairobi industry, paper supplier Kenya, manufacturing excellence, industrial paper, paper production facilities, paper converter, paper conversion"
         url="https://papconkenya.magical.africa"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
         structuredData={structuredData}
@@ -51,7 +56,13 @@ export default function Home() {
       <Hero />
       <HistoryPreview />
       <CoreBusiness />
-      <MiniGallery />
+      <IndustriesSnippet />
+      <FeaturedProducts />
+      
+      <Brands />
+      {/* <TrustSignals /> */}
+     
+      {/* <MiniGallery /> */}
       <Capabilities />
       <FacilitiesPreview />
       <ContactSnippet />

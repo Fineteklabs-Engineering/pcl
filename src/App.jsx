@@ -10,6 +10,9 @@ import History from "./pages/History";
 // import CoreBusinesses from "./pages/CoreBusinesses";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import Products from "./pages/Products";
+import Industries from "./pages/Industries";
+import LabelCraft from "./pages/LabelCraft";
 import "./styles/global.css";
 // import CoreBusiness from "./sections/home/CoreBusiness";
 
@@ -22,6 +25,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/history" element={<History />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/label-craft" element={<LabelCraft />} />
           {/* <Route path="/facilities" element={<Facilities />} /> */}
          {/* <Route path="/core-businesses" element={<CoreBusiness />} /> */}
           <Route path="/gallery" element={<Gallery />} />

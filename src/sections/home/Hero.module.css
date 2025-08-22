@@ -10,27 +10,16 @@
 }
 
 .left {
-  max-width: 40%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
   font-size: 24px;
-  margin-left: 5%;
   z-index: 2;
 }
 
-.tagline {
-  font-size: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--neutral-gray);
-  font-family: var(--fontPrimary);
-  opacity: 0;
-  animation: fadeInUp var(--duration-normal) ease forwards;
-}
-
 .heading {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--papconBlack);
   line-height: 1.5;
@@ -59,11 +48,10 @@
   opacity: 0.9;
 }
 
-
 .description {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   color: var(--neutral-dark);
-  max-width: 400px;
+  max-width: 600px;
   line-height: 1.6;
   font-family: var(--fontPrimary);
   opacity: 0;
@@ -99,49 +87,11 @@
   transition: all var(--duration-fast) ease;
 }
 
-.cta:focus {
-  outline: 2px solid var(--papconOrange);
-  outline-offset: 2px;
-}
-
-.cta:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.stars {
-  display: flex;
-  gap: var(--space-xs);
-  font-size: 1.5rem;
-  opacity: 0;
-  animation: fadeInUp var(--duration-normal) ease 800ms forwards;
-}
-
-.star {
-  color: var(--papconBlack);
-}
-
-.halfStar {
-  color: var(--papconBlack);
-  background: linear-gradient(to right, var(--papconBlack) 50%, #ddd 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.ratingText {
-  font-size: 0.9rem;
-  color: var(--neutral-gray);
-  font-family: var(--fontPrimary);
-  opacity: 0;
-  animation: fadeInUp var(--duration-normal) ease 1000ms forwards;
-}
-
-
 .right {
   flex: 1;
   max-width: 43%; 
-  display: flex;
   justify-content: flex-start;
+  display: flex;
   opacity: 0;
   animation: fadeInRight var(--duration-normal) ease var(--duration-normal) forwards;
 }
@@ -149,8 +99,8 @@
 .heroImage {
   width: 100%; 
   height: auto;
-  transform: translateX(-40px);
   transition: transform var(--duration-normal) ease;
+  transform: translateX(-20px);
   border-radius: var(--radius-lg);
 }
 
@@ -167,7 +117,6 @@
   font-size: 1rem;
   font-family: var(--fontPrimary);
 }
-
 
 @keyframes fadeInUp {
   from {
@@ -201,7 +150,6 @@
     transform: translateY(0) scale(1);
   }
 }
-
 
 /* Large Desktop */
 @media (min-width: 1400px) {
@@ -238,7 +186,7 @@
   }
 }
 
-/* Small Desktop /and large tabkest */
+/* Small Desktop / Large Tablets */
 @media (max-width: 1024px) {
   .hero {
     padding: 2rem 4%;
@@ -262,11 +210,9 @@
   .cta {
     padding: 14px 28px;
   }
-  
-
 }
 
-/* Tablet and mobile */
+/* Tablet and Mobile */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -274,7 +220,6 @@
     padding: var(--space-lg) var(--space-sm);
     min-height: auto;
     gap: var(--space-2xl);
-   
   }
   
   .left {
@@ -313,14 +258,16 @@
   .heroImage:hover {
     transform: scale(1.02);
   }
+  
   .handUnderline::after {
     left: -2px;
     bottom: -2.5rem; 
     width: calc(100% + 4px);
     height: 5rem; 
+  }
 }
-}
-/* Mobile */
+
+/* Mobile Landscape */
 @media (max-width: 768px) and (orientation: landscape) {
   .hero {
     flex-direction: row;
@@ -346,11 +293,6 @@
     line-height: 1.3;
   }
   
-  .tagline {
-    font-size: 0.8rem;
-    margin-bottom: var(--space-xs);
-  }
-  
   .description {
     font-size: 0.85rem;
     line-height: 1.4;
@@ -365,11 +307,9 @@
   .heroImage {
     transform: translateX(-10px);
   }
-  
-
 }
 
-
+/* Small Mobile */
 @media (max-width: 480px) {
   .hero {
     padding: var(--space-md) var(--space-sm);
@@ -391,12 +331,6 @@
     max-width: 100%;
   }
   
-  .tagline {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    margin-bottom: var(--space-xs);
-  }
-  
   .description {
     font-size: 0.9rem;
     line-height: 1.5;
@@ -410,17 +344,6 @@
     margin: var(--space-xs) auto;
   }
   
-  .stars {
-    font-size: 1.2rem;
-    gap: var(--space-xs);
-    justify-content: flex-start;
-  }
-  
-  .ratingText {
-    font-size: 0.75rem;
-    text-align: left;
-  }
-  
   .right {
     max-width: 90%;
   }
@@ -430,7 +353,7 @@
   }
 }
 
-
+/* Very Small Mobile */
 @media (max-width: 360px) {
   .hero {
     padding: var(--space-sm) var(--space-xs);
@@ -450,11 +373,6 @@
     line-height: 1.2;
   }
   
-  .tagline {
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
-  }
-  
   .description {
     font-size: 0.85rem;
     line-height: 1.4;
@@ -468,6 +386,4 @@
   .heroImage {
     max-width: 280px;
   }
-  
-
 }

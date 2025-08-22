@@ -8,21 +8,21 @@ export default function Contact() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact Paper Converters(K) Ltd",
+    "name": "Contact Paper Converters (K) Ltd",
     "description": "Get in touch with Paper Converters(K) Ltd for all your paper product needs. Connect with our team of experts committed to delivering excellence.",
     "mainEntity": {
       "@type": "Organization",
-      "name": "Paper Converters(K) Ltd",
+      "name": "Paper Converters (K) Ltd",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Industrial Area on Olesoi Rd",
-        "addressLocality": "Mombasa",
+        "addressLocality": "Nairobi",
         "addressCountry": "Kenya"
       },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+254 700 000 000",
-        "email": "info@papconkenya.com",
+        "email": "sales@papconkenya.com",
         "contactType": "customer service"
       }
     }
@@ -31,9 +31,9 @@ export default function Contact() {
   return (
     <section className={styles.contactSection}>
       <SEO
-        title="Contact Us - Paper Converters(K) Ltd"
-        description="Ready to transform your vision into reality? Contact Paper Converters(K) Ltd today. Our team of experts is here to listen, collaborate, and create something extraordinary together."
-        keywords="contact Paper Converters, contact Paper Converters K Ltd, contact Papcon Kenya, paper manufacturer contact, Mombasa contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact, paper converter contact"
+        title="Contact Paper Converters (K) Ltd | Envelopes, Labels & Paper Products in Kenya"
+        description="Get in touch with Paper Converters (K) Ltd for enquiries on envelopes, labels, thermal rolls, computer stationery, and office files. Visit our Nairobi office, call, or request a quote online."
+        keywords="contact Paper Converters, contact Paper Converters K Ltd, contact Papcon Kenya, paper manufacturer contact, Nairobi contact, Kenya paper supplier, manufacturing inquiry, business contact, paper products quote, industrial contact, paper converter contact"
         url="https://papconkenya.magical.africa/contact"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/contact.jpg"
         structuredData={structuredData}
@@ -47,7 +47,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Contact Us
+              Get in Touch with Paper Converters (K) Ltd
             </motion.h1>
             <motion.div
               className={styles.breadcrumb}
@@ -135,7 +135,7 @@ export default function Contact() {
                 </div>
                 <div className={styles.contactText}>
                   <h3>Email Us</h3>
-                  <p>info@papconkenya.com</p>
+                  <p>sales@papconkenya.com</p>
                 </div>
               </div>
             </div>

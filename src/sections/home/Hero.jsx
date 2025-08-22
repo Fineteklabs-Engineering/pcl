@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
@@ -13,31 +14,25 @@ const Hero = () => {
   return (
     <section className={styles.hero} aria-label="Hero section">
       <div className={styles.left}>
-        <span className={styles.tagline} aria-label="Company tagline">Your trusted partner</span>
         <h1 className={styles.heading}>
-          A Leader in the <span className={styles.handUnderline}>manufacture</span> of paper products in East Africa
+          Quality <span className={styles.handUnderline}>Paper & Labels</span> — Made in Kenya. Trusted Since 1971.
         </h1>
 
-        <p className={styles.description}>
-          Learn our story from our establishment in 1971 in Mombasa, Kenya, over the decades to become a household name not only in Kenya, but the East African Region.
-        </p>
-        
-        <button 
-          className={styles.cta}
-          aria-label="Get started with Papcon Kenya"
-          type="button"
-        >
-          Get Started
-        </button>
-        
-        <div className={styles.stars} role="img" aria-label="4.5 out of 5 stars rating">
-          <span className={styles.star} aria-hidden="true">★</span>
-          <span className={styles.star} aria-hidden="true">★</span>
-          <span className={styles.star} aria-hidden="true">★</span>
-          <span className={styles.star} aria-hidden="true">★</span>
-          <span className={styles.halfStar} aria-hidden="true">★</span>
+        <div className={styles.description} aria-label="Value propositions">
+        Locally manufactured with trusted quality and flexible solutions for every business.
+       
         </div>
-        <p className={styles.ratingText}>Rated 4.5/5 by 2,000+ happy customers</p>
+
+        <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
+          <Link to="/products" className={styles.cta} aria-label="View our products">
+            View Our Products
+          </Link>
+          <Link to="/contact" className={styles.cta} aria-label="Request a quote">
+            Request a Quote
+          </Link>
+        </div>
+        
+        
       </div>
 
       <div className={styles.right}>

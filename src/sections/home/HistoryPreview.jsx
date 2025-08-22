@@ -33,13 +33,11 @@ export default function HistoryPreview() {
     >
       <div className={styles.historyPreviewContent}>
         <motion.h2 className={styles.heading} variants={item}>
-          Our <span className={styles.handUnderline}>Legacy</span>
+          Our <span className={styles.handUnderline}>Story</span>
         </motion.h2>
 
         <motion.p className={styles.text} variants={item}>
-          Established in 1971 in Mombasa, Kenya, Paper Converters (K) Ltd. has
-          grown vastly over the decades to become one of the leading manufacturers
-          of paper products in the East African Region.
+          For over 50 years, Paper Converters (K) Ltd has powered East Africa’s paper industry. From thermal rolls to premium self-adhesive labels under our Label Craft brand, and Robin stationery trusted in offices nationwide, we remain a partner of choice for retail, manufacturing, and financial services.
         </motion.p>
 
         <motion.div variants={item}>

@@ -8,14 +8,14 @@ export default function History() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "History of Paper Converters(K) Ltd",
-    "description": "Discover the remarkable journey of Paper Converters(K) Ltd since 1971. From our establishment in Mombasa to becoming a household name across East Africa.",
+            "description": "Discover the remarkable journey of Paper Converters(K) Ltd since 1971. From our establishment in Nairobi to becoming a household name across East Africa.",
     "mainEntity": {
       "@type": "Organization",
       "name": "Paper Converters(K) Ltd",
       "foundingDate": "1971",
       "foundingLocation": {
         "@type": "Place",
-        "name": "Mombasa, Kenya"
+        "name": "Nairobi, Kenya"
       },
       "description": "Paper Converters(K) Ltd - Leading paper products manufacturer in East Africa with over 50 years of excellence in manufacturing."
     }
@@ -24,9 +24,9 @@ export default function History() {
   return (
     <>
       <SEO
-        title="Our History - Paper Converters(K) Ltd Since 1971"
-        description="Discover the remarkable journey of Paper Converters(K) Ltd since 1971. From our establishment in Mombasa to becoming a household name across East Africa. Learn our story of manufacturing excellence."
-        keywords="Paper Converters history, Paper Converters K Ltd history, Papcon Kenya history, established 1971, Mombasa Kenya, East Africa manufacturing, paper industry history, manufacturing heritage, company timeline, business legacy, industrial development Kenya, paper converter history"
+        title="Our Story | Paper Converters (K) Ltd – A Legacy of Quality Paper & Printing Solutions"
+        description="Discover the history of Paper Converters (K) Ltd, a trusted name in Kenya’s paper and printing industry since 1971. Learn about our brands — Robin, Label Craft, and Paper Converters — and our commitment to quality, innovation, and service."
+        keywords="Paper Converters history, Paper Converters K Ltd history, Papcon Kenya history, established 1971, Nairobi Kenya, East Africa manufacturing, paper industry history, manufacturing heritage, company timeline, business legacy, industrial development Kenya, paper converter history"
         url="https://papconkenya.magical.africa/history"
         image="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/herogallery.jpg"
         structuredData={structuredData}

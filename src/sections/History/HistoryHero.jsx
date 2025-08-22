@@ -1,4 +1,4 @@
-// src/sections/HistoryHero.jsx
+
 import React, { useEffect, useState } from "react";
 import styles from "./HistoryHero.module.css";
 
@@ -14,22 +14,9 @@ export default function HistoryHero() {
     <section className={styles.hero}>
       <div className={styles.overlay} />
       <div className={styles.content}>
-        <h1 className={styles.title}>
-          <span
-            className={`${styles.slideLeft} ${animate ? styles.animate : ""}`}
-          >
-            COMPANY
-          </span>{" "}
-          <span
-            className={`${styles.slideRight} ${animate ? styles.animate : ""}`}
-          >
-            HISTORY
-          </span>
-        </h1>
+        <h1 className={styles.title}>Our Story: Proudly Crafting Paper Products Since 1971</h1>
         <p className={`${styles.subtitle} ${animate ? styles.subtitleAnimate : ""}`}>
-          Established in 1971 in Mombasa, Kenya, Paper Converters (K) Ltd. has
-          grown vastly over the decades to become one of the leading manufacturers
-          of paper products in the East African Region.
+          From our beginnings in Nairobi to our present base in Nairobi, we’ve grown into a trusted partner for businesses across East Africa.
         </p>
       </div>
       <div className={styles.scrollIndicator}>

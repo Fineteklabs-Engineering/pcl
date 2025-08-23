@@ -13,7 +13,6 @@
   background-size: 24px 24px;
   font-family: var(--fontPrimary);
 
-
   contain: layout style;
   overflow: hidden;
 }
@@ -28,7 +27,6 @@
   max-width: var(--container-width, 1344px);
   contain: layout;
   
- 
   --header-layout: row;
   --heading-size: 2.25rem;
   --cta-size: normal;
@@ -97,12 +95,14 @@
   contain: layout;
   transform-style: preserve-3d;
   
- 
   --grid-columns: 1;
   --grid-gap: 14px;
   --card-width: 100%;
   --card-height: auto;
   --layout-mode: grid;
+  
+  
+
 }
 
 
@@ -121,6 +121,8 @@
     --grid-gap: 32px;
     --card-width: 280px;
     --card-height: 280px;
+    
+    margin-left: 0;
   }
   
   .card {
@@ -139,6 +141,8 @@
     --grid-gap: 24px;
     --card-width: 240px;
     --card-height: 240px;
+    
+    margin-left: 0;
   }
   
   .card {
@@ -157,6 +161,8 @@
     --grid-gap: 20px;
     --card-width: 220px;
     --card-height: 220px;
+    
+    margin-left: 0;
   }
   
   .card {
@@ -181,6 +187,7 @@
     --card-width: 100%;
     --card-height: auto;
     grid-template-columns: repeat(3, 1fr);
+    margin-left: 0;
   }
   
   .card {
@@ -206,6 +213,7 @@
     --card-width: 100%;
     --card-height: auto;
     grid-template-columns: repeat(2, 1fr);
+    margin-left: 0;
   }
   
   .card {
@@ -231,6 +239,7 @@
     --card-width: 100%;
     --card-height: auto;
     grid-template-columns: repeat(2, 1fr);
+    margin-left: 0;
   }
   
   .card {
@@ -261,6 +270,7 @@
     --card-width: 100%;
     --card-height: auto;
     grid-template-columns: 1fr;
+    margin-left: 0;
   }
   
   .card {
@@ -294,6 +304,7 @@
     --card-width: 100%;
     --card-height: auto;
     grid-template-columns: 1fr;
+    margin-left: 0;
   }
   
   .card {
@@ -314,13 +325,11 @@
     0 2px 4px rgba(0,0,0,0.04);
   border: 1px solid rgba(0,0,0,0.04);
   
- 
   will-change: transform, opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
   contain: layout style paint;
   
-
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   background-image: linear-gradient(to bottom, 
@@ -408,7 +417,6 @@
   font-family: var(--fontPrimary);
   margin-top: 0.75rem;
   
-
   will-change: transform;
   transform: translateZ(0);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -457,6 +465,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 900px;
+    margin-left: 0;
   }
   
   .heading {
@@ -470,6 +479,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 800px;
+    margin-left: 0;
   }
 }
 
@@ -493,6 +503,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     max-width: 600px;
+    margin-left: 0;
   }
   
   .card.expanded { 
@@ -540,6 +551,7 @@
     grid-template-columns: 1fr;
     gap: 14px;
     max-width: 400px;
+    margin-left: 0;
   }
   
   .card.expanded { 
@@ -585,6 +597,7 @@
   .container {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    margin-left: 0;
   }
   
   .card.expanded { 

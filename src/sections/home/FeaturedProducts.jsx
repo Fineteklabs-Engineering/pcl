@@ -52,9 +52,9 @@ export default function FeaturedProducts() {
  
   const springConfig = {
     type: "spring",
-    stiffness: 120,      
+    stiffness: 500,      
     damping: 20,        
-    mass: 0.8,
+    mass: 0.4,
     restDelta: 0.001,
   };
 
@@ -73,10 +73,29 @@ export default function FeaturedProducts() {
       timeoutId = setTimeout(handleResize, 100);
     };
 
+   
     handleResize();
+    
+    
     window.addEventListener('resize', debouncedResize, { passive: true });
+    
+
+    window.addEventListener('orientationchange', () => {
+     
+      setTimeout(handleResize, 200);
+    });
+    
+    
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', handleResize);
+    }
+    
     return () => {
       window.removeEventListener('resize', debouncedResize);
+      window.removeEventListener('orientationchange', handleResize);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', handleResize);
+      }
       clearTimeout(timeoutId);
     };
   }, [handleResize]);
@@ -111,7 +130,7 @@ export default function FeaturedProducts() {
   }, [gridConfig]);
 
   const calculateStackPosition = useCallback((index) => ({
-    x: index * 8,
+    x: 40 + (index * 8), 
     y: index * 5,
     rotate: (index % 2 === 0 ? -1.5 : 1.5) + (index * 0.3),
     scale: Math.max(0.85, 1 - index * 0.015),
@@ -171,7 +190,7 @@ export default function FeaturedProducts() {
                     type: 'spring',
                     stiffness: 100,
                     damping: 15,
-                    delay: index * 0.1 
+                    delay: 0
                   }
                 },
                 whileHover: { 
@@ -196,7 +215,7 @@ export default function FeaturedProducts() {
                   scale: isVisible || reducedMotion ? 1 : stackPos.scale,
                   transition: { 
                     ...springConfig, 
-                    delay: reducedMotion ? 0 : index * 0.08
+                    delay: 0
                   }
                 },
                 whileHover: isVisible && !reducedMotion ? { 

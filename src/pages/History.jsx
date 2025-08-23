@@ -2,7 +2,8 @@ import React from "react";
 import SEO from "../components/SEO";
 import HistoryHero from "../sections/History/HistoryHero";
 import HistoryTimeline from "../sections/History/HistoryTimeline";
-import MembershipSection from "../sections/History/MembershipSection";
+import Brands from "../sections/History/Brands";
+import MissionValues from "../sections/History/MissionValues";
 export default function History() {
   const structuredData = {
     "@context": "https://schema.org",
@@ -33,7 +34,8 @@ export default function History() {
       />
       <HistoryHero />
       <HistoryTimeline />
-      <MembershipSection />
+      <Brands />
+      <MissionValues />
     </>
   );
 }

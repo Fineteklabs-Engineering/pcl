@@ -29,16 +29,65 @@
   max-width: 700px;
 }
 
-.title {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 6px;
+.titleContainer {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-bottom: 1rem;
   font-family: var(--fontHeading);
+  background: linear-gradient(135deg, #FF7F11, #A8E600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.titlePart {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.slideLeft {
+  transform: translateX(-100px);
+}
+
+.slideRight {
+  transform: translateX(100px);
+}
+
+.titlePart.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.titlePart.animate:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.titlePart.animate:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #f0e9d2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out 0.6s;
+  font-family: var(--fontSecondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.subheadingAnimate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .slideLeft,
@@ -93,8 +142,8 @@
   font-weight: 400;
   color: #f0e9d2;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+  transform: translateY(30px);
+  transition: all 1s ease-out 0.8s;
   font-family: var(--fontSecondary);
 }
 
@@ -109,7 +158,13 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
-  animation: bounce 2s infinite;
+  opacity: 0;
+  transition: opacity 1s ease-out 1s;
+}
+
+.scrollAnimate {
+  opacity: 1;
+  animation: bounce 2s infinite 1.5s;
 }
 
 .arrow {
@@ -146,9 +201,14 @@
     max-width: 650px;
   }
 
-  .title {
+  .titlePart {
     font-size: 3.5rem;
     letter-spacing: 5px;
+  }
+
+  .subheading {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
   }
 
   .subtitle {
@@ -172,9 +232,14 @@
     max-width: 600px;
   }
 
-  .title {
+  .titlePart {
     font-size: 3.2rem;
     letter-spacing: 4px;
+  }
+
+  .subheading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .subtitle {
@@ -193,7 +258,7 @@
     max-width: 550px;
   }
 
-  .title {
+  .titlePart {
     font-size: 2.8rem;
     letter-spacing: 3px;
   }
@@ -223,17 +288,20 @@
     max-width: 100%;
   }
 
-  .title {
-    font-size: 2.4rem;
-    letter-spacing: 2px;
+  .titleContainer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
   }
 
-  .slideLeft,
-  .slideRight {
+  .titlePart {
     font-size: 2.4rem;
+    letter-spacing: 2px;
+  }
+
+  .subheading {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
   }
 
   .subtitle {
@@ -260,15 +328,18 @@
     padding: 0 0.75rem;
   }
 
-  .title {
-    font-size: 2rem;
-    letter-spacing: 1px;
+  .titleContainer {
     gap: 0.3rem;
   }
 
-  .slideLeft,
-  .slideRight {
+  .titlePart {
     font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .subheading {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle {
@@ -295,14 +366,9 @@
     padding: 0 2rem;
   }
 
-  .title {
+  .titlePart {
     font-size: 3rem;
     letter-spacing: 4px;
-  }
-
-  .slideLeft,
-  .slideRight {
-    font-size: 3rem;
   }
 
   .subtitle {
@@ -321,14 +387,14 @@
     padding: 0 1.5rem;
   }
 
-  .title {
+  .titlePart {
     font-size: 2.2rem;
     letter-spacing: 2px;
   }
 
-  .slideLeft,
-  .slideRight {
-    font-size: 2.2rem;
+  .subheading {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle {
@@ -352,15 +418,14 @@
     padding: 1rem 1.5rem;
   }
 
-  .title {
+  .titlePart {
     font-size: 2rem;
     letter-spacing: 2px;
-    margin-bottom: 0.5rem;
   }
 
-  .slideLeft,
-  .slideRight {
-    font-size: 2rem;
+  .subheading {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle {

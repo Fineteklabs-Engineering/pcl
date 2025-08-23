@@ -6,7 +6,7 @@ import { Factory, FileText, Package, Coffee, Award, Truck, Building, Zap } from 
 const milestones = [
   {
     year: "1971",
-    title: "Company Founded in Nairobi",
+    title: "Company Founded in Mombasa",
     description: "Established as a local envelope manufacturer with a focus on quality and reliability.",
     icon: Factory,
   },

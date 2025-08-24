@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import History from "./pages/History";
 // import Facilities from "./pages/Facilities";
 // import CoreBusinesses from "./pages/CoreBusinesses";
-import Gallery from "./pages/Gallery";
+// import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Industries from "./pages/Industries";
@@ -30,7 +30,7 @@ export default function App() {
           <Route path="/label-craft" element={<LabelCraft />} />
           {/* <Route path="/facilities" element={<Facilities />} /> */}
          {/* <Route path="/core-businesses" element={<CoreBusiness />} /> */}
-          <Route path="/gallery" element={<Gallery />} />
+          {/* <Route path="/gallery" element={<Gallery />} /> */}
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

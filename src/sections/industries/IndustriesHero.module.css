@@ -1,0 +1,432 @@
+
+.container {
+  min-height: 100vh;
+  background-color: var(--neutral-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.backgroundGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--neutral-light), var(--neutral-white), #f0f8f0);
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.mainGrid {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+.leftContent.animateIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.staticContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 32rem;
+}
+
+.mainHeading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: bold;
+  color: var(--papconBlack);
+  line-height: 1.2;
+}
+
+.highlightText {
+  color: var(--papconGreen);
+  position: relative;
+}
+
+.underlineSvg {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 0.75rem;
+  color: var(--papconGreen);
+}
+
+.description {
+  font-size: 1.25rem;
+  color: var(--neutral-gray);
+  line-height: 1.6;
+}
+
+.rightVisual {
+  display: flex;
+  justify-content: center;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translateX(2rem) scale(0.95);
+  transition-delay: 0.3s;
+}
+
+.rightVisual.animateIn {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.visualContainer {
+  position: relative;
+  width: 100%;
+  height: 37.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubbleContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 28rem;
+}
+
+.staticCard {
+  background: var(--neutral-white);
+  border: 2px solid var(--papconGreen);
+  border-radius: 50%;
+  padding: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 8rem;
+  height: 8rem;
+  transition: transform 0.3s ease;
+}
+
+.staticCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.staticIcon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--papconGreen);
+  margin-bottom: 0.75rem;
+}
+
+.staticTitle {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--papconBlack);
+}
+
+
+.orbitWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  box-sizing: content-box;
+  transform: translateX(-80px);
+}
+
+.orbitContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+}
+
+.orbitBubble {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 3px solid var(--papconGreen);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.orbitBubble:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.orbitIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--papconGreen);
+}
+
+.centerBubble {
+  position: absolute;
+  top: 46%;
+  left: 47%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--neutral-white);
+  border: 3px solid var(--papconGreen);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--papconBlack);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+  text-align: center;
+  padding: 1rem;
+}
+
+.centerIcon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--papconGreen);
+}
+
+.centerTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--papconBlack);
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+  }
+  
+  .leftContent {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .staticContent {
+    max-width: 100%;
+  }
+  
+  .mainHeading {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .rightVisual {
+    transform: translateX(0) scale(0.9);
+    margin-top: 1rem;
+  }
+  
+  .rightVisual.animateIn {
+    transform: translateX(0) scale(1);
+  }
+  
+  .visualContainer {
+    height: 25rem;
+  }
+  
+  .bubbleContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+  }
+  
+  .staticCard {
+    width: 6rem;
+    height: 6rem;
+    padding: 0.75rem;
+  }
+  
+  .staticIcon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .staticTitle {
+    font-size: 0.7rem;
+  }
+  
+  .orbitWrapper {
+    transform: translateX(-30px);
+    padding: 40px;
+    max-width: 100%;
+    height: 400px;
+  }
+  
+  .centerBubble {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 50%;
+    padding: 0.75rem;
+  }
+  
+  .orbitBubble {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .orbitIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  
+  .centerIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .centerTitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainGrid {
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
+  }
+  
+  .leftContent {
+    padding: 0 0.5rem;
+  }
+  
+  .mainHeading {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .visualContainer {
+    height: 20rem;
+  }
+  
+  .bubbleContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .staticCard {
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+  }
+  
+  .staticIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .staticTitle {
+    font-size: 0.6rem;
+  }
+  
+  .orbitWrapper {
+    padding: 30px;
+    height: 350px;
+  }
+  
+  .centerBubble {
+    width: 100px;
+    height: 100px;
+    padding: 0.5rem;
+  }
+  
+  .orbitBubble {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .orbitIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .centerIcon {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .centerTitle {
+    font-size: 0.7rem;
+  }
+}

@@ -6,7 +6,7 @@ import "../styles/global.css";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  // Track locally-active nav for static items that don't navigate
+  
   const [staticActive, setStaticActive] = useState("");
 
   const navLinks = [
@@ -15,7 +15,7 @@ export default function Navbar() {
     { path: "/products", label: "Products" },
     { path: "/industries", label: "Industries" },
     { path: "/label-craft", label: "Label Craft" },
-    { path: "/gallery", label: "Gallery" },
+    // { path: "/gallery", label: "Gallery" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -121,7 +121,7 @@ export default function Navbar() {
                   setMenuOpen(false);
                 }}
                 className={({ isActive }) => {
-                  // Mirror desktop: if any static linl, is active, suppress others
+                 
                   if (staticActive) {
                     if (isStaticLink(link.label, link.path)) {
                       return staticActive === link.label

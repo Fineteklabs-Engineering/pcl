@@ -299,7 +299,7 @@
   color: var(--neutral-gray);
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 1fr;

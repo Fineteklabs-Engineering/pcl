@@ -155,11 +155,25 @@
   100% { transform: translateX(-50%); }
 }
 
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero { flex-direction: row; gap: var(--space-md); padding: var(--space-xl) 6%; min-height: auto; }
+  .left { max-width: 55%; font-size: 20px; }
+  .heading { font-size: 2.1rem; }
+  .description { font-size: 1rem; }
+  .reelWrap { height: 260px; }
+  .reel { height: 220px; }
+}
+
 @media (max-width: 768px) {
   .hero { flex-direction: column; text-align: center; padding: var(--space-2xl) 5%; min-height: auto; }
   .left { max-width: 100%; font-size: 20px; }
   .heading { font-size: 2rem; }
   .description { font-size: 1.1rem; margin: 0 auto; }
   .hero::before { opacity: .2; }
+}
+
+@media (max-width: 420px) {
+  .heading { font-size: 1.8rem; }
+  .description { font-size: 0.95rem; }
 }
 

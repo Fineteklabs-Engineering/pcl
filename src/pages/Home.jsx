@@ -3,14 +3,14 @@ import SEO from "../components/SEO";
 import Hero from "../sections/home/Hero";
 import HistoryPreview from "../sections/home/HistoryPreview";
 import CoreBusiness from "../sections/home/CoreBusiness";
-// import MiniGallery from "../sections/home/MiniGallery";
+
 import Capabilities from "../sections/home/Capabilities";
 import FacilitiesPreview from "../sections/home/FacilitiesPreview";
 import ContactSnippet from "../sections/home/ContactSnippet";
 import FeaturedProducts from "../sections/home/FeaturedProducts";
 import IndustriesSnippet from "../sections/home/IndustriesSnippet";
 import Brands from "../sections/home/Brands";
-// import TrustSignals from "../sections/home/TrustSignals";
+import TrustSignals from "../sections/home/TrustSignals";
 
 export default function Home() {
   const structuredData = {
@@ -36,7 +36,7 @@ export default function Home() {
       "email": "info@papconkenya.com"
     },
     "sameAs": [
-      // Use flow layout (no transforms) for tablets and down, or sma
+    
       "https://facebook.com/papconkenya",
       "https://twitter.com/papconkenya",
       "https://linkedin.com/company/papconkenya"
@@ -60,11 +60,12 @@ export default function Home() {
       <FeaturedProducts />
       
       <Brands />
-      {/* <TrustSignals /> */}
+    
      
-      {/* <MiniGallery /> */}
+      
       <Capabilities />
       <FacilitiesPreview />
+      <TrustSignals />
       <ContactSnippet />
     </>
   );

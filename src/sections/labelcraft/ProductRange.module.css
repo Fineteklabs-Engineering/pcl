@@ -87,3 +87,20 @@
   .thumb { width: 200px; height: 200px; }
 }
 
+
+@media (orientation: landscape) and (max-height: 700px) and (max-width: 1024px) {
+  .section { padding: 56px 6%; }
+  .heading { font-size: 2rem; margin-bottom: 2rem; }
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { padding: 24px; min-height: 280px; }
+  .thumb { width: 200px; height: 200px; }
+}
+
+
+@media (orientation: portrait) and (max-width: 400px) {
+  .section { padding: 56px 5%; }
+  .heading { font-size: 1.8rem; margin-bottom: 1.5rem; }
+  .card { padding: 20px; }
+  .thumb { width: 180px; height: 180px; }
+}
+

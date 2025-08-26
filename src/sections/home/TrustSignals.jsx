@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const clients = [
   { name: "Absa", logo: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/absa.svg" },
-  { name: "Brookside", logo: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/brookside-removebg-preview.png" },
+  { name: "Brookside", logo: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/biscoro.png" },
   { name: "Chandarana", logo: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/chandaranasup-removebg-preview.png" },
   { name: "Crown Paints", logo: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/crown-removebg-preview.png" },
   { name: "Equity", logo: "https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/equity-removebg-preview.png" },

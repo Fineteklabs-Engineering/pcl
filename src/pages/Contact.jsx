@@ -15,16 +15,18 @@ export default function Contact() {
       "name": "Paper Converters (K) Ltd",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Industrial Area on Olesoi Rd",
+        "streetAddress": "09 Olesoi Rd, off Lunga Lunga Rd, Industrial Area",
         "addressLocality": "Nairobi",
         "addressCountry": "Kenya"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+254 700 000 000",
-        "email": "sales@papconkenya.com",
-        "contactType": "customer service"
-      }
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+254 733 243157",
+          "email": "sales@papconkenya.com",
+          "contactType": "sales"
+        }
+      ]
     }
   };
 
@@ -71,23 +73,42 @@ export default function Contact() {
           <form className={styles.form}>
             <div className={styles.inputRow}>
               <div className={styles.inputGroup}>
-                <input type="text" placeholder="Your Name" required />
+                <input type="text" name="name" placeholder="Name" required />
               </div>
             </div>
             <div className={styles.inputRow}>
               <div className={styles.inputGroup}>
-                <input type="email" placeholder="Your Email" required />
+                <input type="text" name="company" placeholder="Company" />
               </div>
             </div>
             <div className={styles.inputRow}>
               <div className={styles.inputGroup}>
-                <input type="text" placeholder="Subject" required />
+                <input type="email" name="email" placeholder="Email" required />
+              </div>
+            </div>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <input type="tel" name="phone" placeholder="Phone" />
+              </div>
+            </div>
+            <div className={styles.inputRow}>
+              <div className={styles.inputGroup}>
+                <select name="product" defaultValue="" className={styles.select} required>
+                  <option value="" disabled>Product of Interest</option>
+                  <option value="Envelopes">Envelopes</option>
+                  <option value="Computer Stationery">Computer Stationery</option>
+                  <option value="Thermal Rolls">Thermal Rolls</option>
+                  <option value="Labels">Labels</option>
+                  <option value="Office Files">Office Files</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
             </div>
             <div className={styles.inputRow}>
               <div className={styles.inputGroup}>
                 <textarea 
-                  placeholder="Your Message" 
+                  name="message"
+                  placeholder="Message" 
                   rows="5" 
                   required
                 ></textarea>
@@ -100,7 +121,7 @@ export default function Contact() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              SEND MESSAGE
+              REQUEST A QUOTE
             </motion.button>
           </form>
         </motion.div>
@@ -111,10 +132,10 @@ export default function Contact() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2>Get In Touch</h2>
+          <h2> Get in touch with us</h2>
           <p className={styles.formDescription}>
-          Connect with our team of experts who are passionate about delivering excellence. We're committed to bringing your ideas to life with precision.
-          </p>
+           Connect with our team of experts who are passionate about delivering excellence. We're committed to bringing your ideas to life with precision.
+            </p>
           
           <div className={styles.contactDetails}>
           
@@ -124,8 +145,8 @@ export default function Contact() {
                   <FaPhoneAlt />
                 </div>
                 <div className={styles.contactText}>
-                  <h3>Call Us</h3>
-                  <p>+254 202 695 636</p>
+                  <h3>Phone</h3>
+                  <p>+254 733 243157</p>
                 </div>
               </div>
 
@@ -134,7 +155,7 @@ export default function Contact() {
                   <FaEnvelope />
                 </div>
                 <div className={styles.contactText}>
-                  <h3>Email Us</h3>
+                  <h3>Email</h3>
                   <p>sales@papconkenya.com</p>
                 </div>
               </div>
@@ -157,7 +178,7 @@ export default function Contact() {
                 </div>
                 <div className={styles.contactText}>
                   <h3>Address</h3>
-                  <p>Nairobi, Industrial Area, off Lunga Lunga Rd</p>
+                  <p>Paper Converters (K) Ltd<br/>09 Olesoi Rd, off Lunga Lunga Rd<br/>Industrial Area, Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
@@ -191,7 +212,7 @@ export default function Contact() {
       >
         <iframe
           title="Papcon Kenya Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7726969401524!2d36.85961207638481!3d-1.3117715356574393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1183e69f10a9%3A0x8c53c55258e482fd!2sOlesoi%20Rd%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1755154970525!5m2!1sen!2ske"
+          src="https://www.google.com/maps?q=Paper%20Converters%20(K)%20Ltd%2009%20Olesoi%20Rd%2C%20off%20Lunga%20Lunga%20Rd%2C%20Nairobi&output=embed"
           width="100%"
           height="450"
           style={{ border: 0 }}

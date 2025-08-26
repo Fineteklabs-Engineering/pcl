@@ -4,8 +4,8 @@ import Hero from "../sections/home/Hero";
 import HistoryPreview from "../sections/home/HistoryPreview";
 import CoreBusiness from "../sections/home/CoreBusiness";
 
-import Capabilities from "../sections/home/Capabilities";
-import FacilitiesPreview from "../sections/home/FacilitiesPreview";
+// import Capabilities from "../sections/home/Capabilities";
+// import FacilitiesPreview from "../sections/home/FacilitiesPreview";
 import ContactSnippet from "../sections/home/ContactSnippet";
 import FeaturedProducts from "../sections/home/FeaturedProducts";
 import IndustriesSnippet from "../sections/home/IndustriesSnippet";
@@ -31,9 +31,9 @@ export default function Home() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+254 700 000 000",
+      "telephone": "+254 733 243157",
       "contactType": "customer service",
-      "email": "info@papconkenya.com"
+      "email": "sales@papconkenya.com"
     },
     "sameAs": [
     
@@ -63,8 +63,8 @@ export default function Home() {
     
      
       
-      <Capabilities />
-      <FacilitiesPreview />
+      {/* <Capabilities /> */}
+      {/* <FacilitiesPreview /> */}
       <TrustSignals />
       <ContactSnippet />
     </>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -19,23 +20,27 @@ export default function Footer() {
           </p>
         </div>
 
-      
+        
         <div className={styles.footerCenter}>
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#history">History</a></li>
-            <li><a href="#facilities">Facilities</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/history">Our Story</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/industries">Industries</Link></li>
+            <li><Link to="/label-craft">Label Craft</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
-       
+        
         <div className={styles.footerRight}>
-          <h4>Contact Us</h4>
-          <p>Industrial Area on Olesoi Rd, Kenya</p>
-          <p>Phone: +254 700 000 000</p>
-          <p>Email: info@papconkenya.com</p>
+          <h4>Contact</h4>
+          <p>Paper Converters (K) Ltd</p>
+          <p>09 Olesoi Rd, off Lunga Lunga Rd</p>
+          <p>Industrial Area, Nairobi, Kenya</p>
+          <p>Phone: +254 733 243157</p>
+          <p>Email: sales@papconkenya.com</p>
           <div className={styles.socialIcons}>
             <a href="#"><FaFacebookF /></a>
             <a href="#"><FaTwitter /></a>

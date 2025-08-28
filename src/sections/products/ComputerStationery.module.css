@@ -335,6 +335,7 @@
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
     text-align: center;
+    overflow-x: hidden;
   }
 
   .title {
@@ -360,6 +361,7 @@
 @media (max-width: 768px) {
   .section {
     padding: var(--space-2xl) 5%;
+    overflow-x: hidden;
   }
 
   .title {
@@ -390,6 +392,7 @@
 @media (max-width: 480px) {
   .section {
     padding: var(--space-xl) 4%;
+    overflow-x: hidden;
   }
 
   .title {

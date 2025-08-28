@@ -20,20 +20,22 @@ export default function App() {
   return (
     <HelmetProvider>
       <Router>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/label-craft" element={<LabelCraft />} />
-          {/* <Route path="/facilities" element={<Facilities />} /> */}
-         {/* <Route path="/core-businesses" element={<CoreBusiness />} /> */}
-          {/* <Route path="/gallery" element={<Gallery />} /> */}
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <div style={{ overflowX: 'hidden', width: '100%' }}>
+          <ScrollToTop />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/label-craft" element={<LabelCraft />} />
+            {/* <Route path="/facilities" element={<Facilities />} /> */}
+           {/* <Route path="/core-businesses" element={<CoreBusiness />} /> */}
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </HelmetProvider>
   );

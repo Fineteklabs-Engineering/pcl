@@ -318,6 +318,7 @@
     padding: var(--space-lg) var(--space-sm);
     min-height: auto;
     gap: var(--space-2xl);
+    overflow-x: hidden;
   }
   
   .left {
@@ -327,6 +328,7 @@
     padding: 0 var(--space-sm);
     align-items: flex-start;
     text-align: left;
+    overflow-x: hidden;
   }
   
   .tagline {
@@ -354,6 +356,7 @@
     order: 2;
     justify-content: center;
     margin-top: var(--space-md);
+    overflow-x: hidden;
   }
   
   .heading {
@@ -392,6 +395,7 @@
     min-height: 100vh;
     padding: var(--space-sm) var(--space-md);
     gap: var(--space-lg);
+    overflow-x: hidden;
   }
   
   .left {
@@ -400,6 +404,7 @@
     gap: var(--space-sm);
     padding: 0;
     align-items: flex-start;
+    overflow-x: hidden;
   }
   
   .tagline {
@@ -425,6 +430,7 @@
   
   .right {
     max-width: 40%;
+    overflow-x: hidden;
   }
   
   .heading {
@@ -454,6 +460,7 @@
     padding: var(--space-md) var(--space-sm);
     gap: var(--space-lg);
     text-align: left;
+    overflow-x: hidden;
   }
   
   .left {
@@ -461,6 +468,7 @@
     gap: var(--space-sm);
     text-align: left;
     align-items: flex-start;
+    overflow-x: hidden;
   }
   
   .tagline {
@@ -505,6 +513,7 @@
   
   .right {
     max-width: 90%;
+    overflow-x: hidden;
   }
   
   .heroImage {
@@ -518,6 +527,7 @@
     padding: var(--space-sm) var(--space-xs);
     gap: var(--space-md);
     text-align: left;
+    overflow-x: hidden;
   }
   
   .left {
@@ -525,6 +535,7 @@
     padding: 0;
     text-align: left;
     align-items: flex-start;
+    overflow-x: hidden;
   }
   
   .heading {

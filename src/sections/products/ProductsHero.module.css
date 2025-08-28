@@ -165,11 +165,13 @@
     text-align: center;
     padding: var(--space-2xl) 5%;
     min-height: auto;
+    overflow-x: hidden;
   }
 
   .left {
     max-width: 100%;
     font-size: 20px;
+    overflow-x: hidden;
   }
 
   .heading {
@@ -186,10 +188,12 @@
 @media (max-width: 768px) {
   .hero {
     padding: var(--space-xl) 4%;
+    overflow-x: hidden;
   }
 
   .left {
     font-size: 18px;
+    overflow-x: hidden;
   }
 
   .heading {
@@ -209,10 +213,12 @@
 @media (max-width: 480px) {
   .hero {
     padding: var(--space-lg) 3%;
+    overflow-x: hidden;
   }
 
   .left {
     font-size: 16px;
+    overflow-x: hidden;
   }
 
   .heading {

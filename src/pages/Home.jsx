@@ -7,7 +7,7 @@ import CoreBusiness from "../sections/home/CoreBusiness";
 // import Capabilities from "../sections/home/Capabilities";
 // import FacilitiesPreview from "../sections/home/FacilitiesPreview";
 import ContactSnippet from "../sections/home/ContactSnippet";
-import FeaturedProducts from "../sections/home/FeaturedProducts";
+// import FeaturedProducts from "../sections/home/FeaturedProducts";
 import IndustriesSnippet from "../sections/home/IndustriesSnippet";
 import Brands from "../sections/home/Brands";
 import TrustSignals from "../sections/home/TrustSignals";
@@ -57,7 +57,7 @@ export default function Home() {
       <HistoryPreview />
       <CoreBusiness />
       <IndustriesSnippet />
-      <FeaturedProducts />
+      {/* <FeaturedProducts /> */}
       
       <Brands />
     

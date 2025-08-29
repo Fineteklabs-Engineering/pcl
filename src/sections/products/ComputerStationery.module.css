@@ -23,7 +23,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-3xl);
+  gap: calc(var(--space-3xl) + var(--space-lg));
   align-items: center;
   position: relative;
   z-index: 2;
@@ -32,7 +32,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   opacity: 0;
   transform: translateX(-50px);
   transition: all 0.8s ease;

@@ -29,7 +29,7 @@ const SelfAdhesiveLabels = () => {
           <div className={`${styles.visual} ${isVisible ? styles.animateIn : ''}`}>
             <div className={styles.imageContainer}>
               <img
-                src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/self-adhesive-labels.jpg"
+                src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/self-adhesive.jpg"
                 alt="Label Craft self-adhesive labels "
                 className={styles.image}
               />

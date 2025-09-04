@@ -85,7 +85,7 @@ const BoxFiles = () => {
           <div className={`${styles.visual} ${isVisible ? styles.animateIn : ''}`}>
             <div className={styles.imageContainer}>
               <img
-                src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/box-files.jpg"
+                src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/box-files.png"
                 alt="Robin brand box files "
                 className={styles.image}
               />

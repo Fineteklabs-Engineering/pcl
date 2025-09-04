@@ -260,7 +260,7 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 var(--space-lg) var(--space-xl) rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 var(--space-lg) var(--space-xl) rgba(0, 0, 0, 0.1); */
   transition: transform var(--duration-normal) ease;
 }
 

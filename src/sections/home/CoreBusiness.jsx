@@ -13,16 +13,56 @@ import {
 } from "lucide-react";
 
 const specialties = [
-  { label: "Envelopes", icon: Mail },
-  { label: "Continuous Computer Stationery", icon: Printer },
-  { label: "Thermal Cash Register & ATM Rolls", icon: Tag },
-  { label: "Office Files", icon: File },
-  { label: "Ruled Paper & Writing Pads", icon: BookOpen },
-  { label: "Counter Books", icon: Layers },
-  { label: "Duplicate Books and other Office Stationery", icon: FileText },
-  { label: "School Stationery products", icon: BookOpen },
-  { label: "Self-Adhesive Labels", icon: Tag },
-  { label: "Commercial Printing Services", icon: Settings },
+  { 
+    label: "Envelopes", 
+    icon: Mail,
+    description: "High-quality envelopes in various sizes and finishes for professional correspondence and mailing needs."
+  },
+  { 
+    label: "Continuous Computer Stationery", 
+    icon: Printer,
+    description: "Continuous form paper and computer stationery for high-volume printing applications and data processing."
+  },
+  { 
+    label: "Thermal Cash Register & ATM Rolls", 
+    icon: Tag,
+    description: "Thermal paper rolls for cash registers, ATMs, and point-of-sale systems with reliable printing quality."
+  },
+  { 
+    label: "Office Files", 
+    icon: File,
+    description: "Durable filing systems and office organization solutions to keep your documents secure and accessible."
+  },
+  { 
+    label: "Ruled Paper & Writing Pads", 
+    icon: BookOpen,
+    description: "Quality writing paper and notepads for everyday office use, meetings, and personal note-taking."
+  },
+  { 
+    label: "Counter Books", 
+    icon: Layers,
+    description: "Professional counter books and receipt books for retail and service businesses with duplicate copies."
+  },
+  { 
+    label: "Duplicate Books and other Office Stationery", 
+    icon: FileText,
+    description: "Comprehensive range of duplicate books and essential office stationery for business operations."
+  },
+  { 
+    label: "School Stationery products", 
+    icon: BookOpen,
+    description: "Complete range of school supplies including exercise books, pens, pencils, and educational materials."
+  },
+  { 
+    label: "Self-Adhesive Labels", 
+    icon: Tag,
+    description: "Custom self-adhesive labels for product identification, shipping, and organizational purposes."
+  },
+  { 
+    label: "Commercial Printing Services", 
+    icon: Settings,
+    description: "Professional printing services for business cards, brochures, flyers, and custom printed materials."
+  },
 ];
 
 const CARD_SIZE = 180;
@@ -32,6 +72,7 @@ const COLUMNS = 5;
 export default function CoreBusiness() {
   const [isVisible, setIsVisible] = useState(false);
   const [screenSize, setScreenSize] = useState('desktop');
+  const [flippedCards, setFlippedCards] = useState(new Set());
   const sectionRef = useRef(null);
   const reducedMotion = useReducedMotion();
 
@@ -42,6 +83,32 @@ export default function CoreBusiness() {
     damping: 15,         
     mass: 0.5,         
     restDelta: 0.001,
+  };
+
+  const handleCardFlip = (index) => {
+    setFlippedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
+  const handleCardHover = (index, isHovering) => {
+    if (screenSize === 'desktop' || screenSize === 'tablet') {
+      setFlippedCards(prev => {
+        const newSet = new Set(prev);
+        if (isHovering) {
+          newSet.add(index);
+        } else {
+          newSet.delete(index);
+        }
+        return newSet;
+      });
+    }
   };
 
 
@@ -113,10 +180,10 @@ export default function CoreBusiness() {
       <h2 className={styles.heading}>We specialize in the supply and manufacture of:</h2>
       
       <div className={styles.container}>
-        {specialties.map(({ label, icon: Icon }, index) => (
+        {specialties.map(({ label, icon: Icon, description }, index) => (
           <motion.div
             key={index}
-            className={styles.card}
+            className={`${styles.card} ${flippedCards.has(index) ? styles.flipped : ''}`}
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
@@ -134,6 +201,9 @@ export default function CoreBusiness() {
               boxShadow: "0 15px 30px rgba(0,0,0,0.12)",
               transition: { duration: 0.3 }
             } : {}}
+            onMouseEnter={() => handleCardHover(index, true)}
+            onMouseLeave={() => handleCardHover(index, false)}
+            onClick={() => handleCardFlip(index)}
             style={{
               width: getGridConfig().cardSize,
               height: getGridConfig().cardSize,
@@ -141,8 +211,15 @@ export default function CoreBusiness() {
               originY: 0.5,
             }}
           >
-            <Icon className={styles.icon} size={32} />
-            <p>{label}</p>
+            <div className={styles.cardInner}>
+              <div className={styles.cardFront}>
+                <Icon className={styles.icon} size={32} />
+                <p>{label}</p>
+              </div>
+              <div className={styles.cardBack}>
+                <p className={styles.description}>{description}</p>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>

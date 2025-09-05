@@ -36,15 +36,10 @@
   position: absolute;
   background: white;
   border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
   box-shadow: 
     0 6px 18px rgba(0, 0, 0, 0.08),
     0 2px 4px rgba(0,0,0,0.05);
-  cursor: default;
+  cursor: pointer;
   will-change: transform, opacity;
   border: 1px solid rgba(0,0,0,0.05);
   backface-visibility: hidden;
@@ -52,15 +47,68 @@
   background-image: linear-gradient(to bottom, 
     rgba(255,255,255,0.9) 0%, 
     rgba(245,245,245,0.7) 100%);
+ 
 }
 
-.card p {
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    160deg,
+    var(--papconGreen) 0%,
+    #93cc00 35%,
+    #7fb800 65%,
+    #6aa300 100%
+  );
+  color:black;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront p {
   margin-top: 1.25rem;
   font-weight: 600;
   text-align: center;
   font-size: 0.95rem;
   color: #000;
   transition: all 0.3s ease;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-align: center;
+  color: #000;
+  font-weight: 500;
+  margin: 0;
 }
 
 .iconContainer {
@@ -150,12 +198,21 @@
   
   .card {
     border-radius: 12px;
+  }
+  
+  .cardFront,
+  .cardBack {
     padding: 1rem;
   }
   
-  .card p {
+  .cardFront p {
     font-size: 0.85rem;
     margin-top: 1rem;
+    line-height: 1.3;
+  }
+  
+  .description {
+    font-size: 0.75rem;
     line-height: 1.3;
   }
   
@@ -181,13 +238,22 @@
   }
   
   .card {
-    padding: 0.75rem;
     border-radius: 10px;
   }
   
-  .card p {
+  .cardFront,
+  .cardBack {
+    padding: 0.75rem;
+  }
+  
+  .cardFront p {
     font-size: 0.8rem;
     margin-top: 0.75rem;
+  }
+  
+  .description {
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
   
   .icon {
@@ -199,6 +265,10 @@
 @media (prefers-reduced-motion) {
   .card {
     transition: all 0.4s ease !important;
+  }
+  
+  .cardInner {
+    transition: transform 0.4s ease !important;
   }
   
   .iconContainer {

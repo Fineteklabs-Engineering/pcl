@@ -85,7 +85,7 @@ const ThermalRolls = () => {
           <div className={`${styles.visual} ${isVisible ? styles.animateIn : ''}`}>
             <div className={styles.imageContainer}>
               <img
-                src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/thermalrolls-removebg-preview.png"
+                src="https://pub-eb8df8ce05ba4243b626e4a16b3fd69b.r2.dev/thermal-rolsls.png"
                 alt="Thermal rolls "
                 className={styles.image}
               />
